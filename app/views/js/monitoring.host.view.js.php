@@ -156,6 +156,8 @@
 			}
 		};
 
+		 
 		window.host_page = new hostPage();
+		
 	});
 </script>

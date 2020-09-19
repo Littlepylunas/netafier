@@ -117,9 +117,9 @@ class CBrandHelper {
 		$footer = self::getValue(
 			'BRAND_FOOTER',
 			[
-				$with_version ? 'Zabbix '.ZABBIX_VERSION.'. ' : null,
-				'&copy; '.ZABBIX_COPYRIGHT_FROM.'&ndash;'.ZABBIX_COPYRIGHT_TO.', ',
-				(new CLink('Zabbix SIA', 'https://www.zabbix.com/'))
+				$with_version ? 'Netafier '.'1.43'.'. ' : null,
+				'&copy; '.'2019'.'&ndash;'.'2020'.', ',
+				(new CLink('Netafier JSC', 'https://www.netafier.com/'))
 					->addClass(ZBX_STYLE_GREY)
 					->addClass(ZBX_STYLE_LINK_ALT)
 					->setAttribute('target', '_blank')

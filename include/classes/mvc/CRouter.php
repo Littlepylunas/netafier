@@ -331,6 +331,7 @@ class CRouter {
 		$this->action = $action;
 
 		if (array_key_exists($action, $this->routes)) {
+
 			[$this->controller, $this->layout, $this->view] = $this->routes[$action];
 		}
 		else {

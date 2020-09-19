@@ -173,3 +173,4 @@ $widget->show();
 (new CScriptTag('host_page.start();'))
 	->setOnDocumentReady()
 	->show();
+

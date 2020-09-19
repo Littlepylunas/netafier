@@ -151,6 +151,9 @@ foreach ($data['hosts'] as $hostid => $host) {
 	]);
 }
 
+
 $form->addItem([$table,	$data['paging']]);
 
+
 echo $form;
+

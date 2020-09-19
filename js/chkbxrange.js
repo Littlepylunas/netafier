@@ -341,3 +341,4 @@ var chkbxRange = {
 		return true;
 	}
 };
+

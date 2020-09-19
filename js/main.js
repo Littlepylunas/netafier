@@ -18,6 +18,8 @@
 **/
 
 
+// Table style
+
 // Global constants.
 
 // Sync with SASS variable: $ui-transition-duration.
@@ -905,3 +907,20 @@ window.addEventListener('load', e => {
 			});
 	}
 });
+
+ 
+
+// $(document).ready(function() {
+// 	$(".list-table tr").each(function(i, v){
+// 		if(i == 0) {
+// 			$(v).addClass("row-header-background");
+// 			$(v).children().css({ 
+//                 "color": "white", 
+// 			});
+// 			$(v).children().children().css({ 
+//                 "color": "white", 
+// 			});
+// 		}
+// 		else if(i%2 == 0) $(v).addClass("row-odd-background");
+// 	}) 
+//   })
