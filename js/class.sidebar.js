@@ -276,6 +276,25 @@ class CSidebar extends CBaseComponent {
 				e.preventDefault();
 			},
 
+			// NGOCVB_START_CHANGE
+			// Define function show - hidden side bar
+			menuoff: (e) => {
+				this.setViewMode(SIDEBAR_VIEW_MODE_HIDDEN);
+
+				this._events._update(this._view_mode);
+
+				//e.preventDefault();
+			},
+
+			menuon: (e) => {
+				this.setViewMode(SIDEBAR_VIEW_MODE_FULL);
+
+				this._events._update(this._view_mode);
+
+				//e.preventDefault();
+			},
+			// NGOCVB_END_CHANGE
+
 			/**
 			 * Update event listeners based on view mode.
 			 *
@@ -292,24 +311,21 @@ class CSidebar extends CBaseComponent {
 					this.off('mouseenter', this._events.mouseenter);
 					this.off('mouseleave', this._events.mouseleave);
 				}
-
+				
+				// NGOCVB_START_CHANGE
+				// Show - Hidden side bar
 				if (this._sidebar_toggle !== null) {
 					if (view_mode === SIDEBAR_VIEW_MODE_HIDDEN) {
-						this._sidebar_toggle.addEventListener('click', this._events.toggle);
+						this._sidebar_toggle.removeEventListener('click', this._events.menuoff);
+						this._sidebar_toggle.addEventListener('click', this._events.menuon);
+
 					}
 					else {
-						this._sidebar_toggle.removeEventListener('click', this._events.toggle);
+						this._sidebar_toggle.removeEventListener('click', this._events.menuon);
+						this._sidebar_toggle.addEventListener('click', this._events.menuoff);
 					}
 				}
-
-				// if (this._sidebar_toggle !== null) {
-				// 	if (view_mode === SIDEBAR_VIEW_MODE_HIDDEN) {
-				// 		this._sidebar_toggle.addEventListener('click', this.setViewMode(SIDEBAR_VIEW_MODE_FULL));
-				// 	}
-				// 	else {
-				// 		this._sidebar_toggle.addEventListener('click', this.setViewMode(SIDEBAR_VIEW_MODE_HIDDEN));
-				// 	}
-				// }
+				// NGOCVB_END_CHANGE
 
 				if ([SIDEBAR_VIEW_MODE_FULL, SIDEBAR_VIEW_MODE_HIDDEN].includes(view_mode)) {
 					this.on('mouseleave', this._events.expandSelected);

@@ -119,12 +119,6 @@ class CWidget {
 
 	private function createTopHeader() {
 		$divs = [
-			// (new CButton(null, _('Hide sidebar')))
-			// 	->addClass('button-hide js-sidebar-mode')
-			// 	->setAttribute('title', _('Hide sidebar')),
-			// (new CButton(null, _('Show sidebar')))
-			// 	->addClass('button-show js-sidebar-mode')
-			// 	->setAttribute('title', _('Show sidebar')),
 			(new CTag('nav', true, (new CButton(null, _('Show sidebar')))
 				->setId('sidebar-button-toggle')
 				->addClass('button-toggle')

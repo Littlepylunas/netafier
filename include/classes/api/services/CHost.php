@@ -694,6 +694,59 @@ class CHost extends CHostGeneral {
 	 * @return array
 	 */
 	public function create($hosts) {
+
+		// NGOCVB_START_CHANGE
+		// ********* CREATE_TRIGGER ***********
+		$function_name = '$insert_items_trigger$';
+		$concat_query = "CONCAT(host, '-screen')";
+		$create_function_query = "CREATE OR REPLACE FUNCTION insert_items_trigger() 
+		RETURNS trigger AS $function_name
+		DECLARE 
+			hostname text;
+			screenid bigint;
+			resourceid bigint;
+		BEGIN
+			EXECUTE format('select host from hosts WHERE hostid = %s;', NEW.hostid) 
+			INTO hostname; 
+
+			hostname:= concat(hostname, '-screen');
+
+			EXECUTE format('SELECT screenid FROM screens where name = ''%s'';', hostname) INTO screenid; 
+			
+			resourceid:= screenid * screenid;
+			
+			IF NEW.key_ = 'vm.memory.util[vm.memory.util.1]' THEN
+				resourceid:= resourceid + 1;
+			END IF;
+			IF NEW.key_ = 'sensor.temp.value[ciscoEnvMonTemperatureValue.1008]' THEN
+				resourceid:= resourceid + 2;
+			END IF;
+			IF NEW.key_ = 'icmppingsec' THEN
+				resourceid:= resourceid + 3;
+			END IF;
+			IF NEW.key_ = 'system.cpu.util[cpmCPUTotal5minRev.1]' THEN
+				resourceid:= resourceid + 4;
+			END IF;
+			
+			EXECUTE format('UPDATE screens_items set resourceid = %s 
+				WHERE screenid = %s and resourceid = %s;', 
+				NEW.itemid, screenid, resourceid);
+			
+			RETURN NEW;
+		END;
+		$function_name LANGUAGE plpgsql;";
+
+		$drop_trigger_query = "DROP TRIGGER IF EXISTS insert_items_trigger ON items;";
+
+		$create_trigger_query = "CREATE TRIGGER insert_items_trigger AFTER INSERT ON items
+		FOR EACH ROW EXECUTE PROCEDURE insert_items_trigger();";
+
+		DBExecute($create_function_query);
+		DBExecute($drop_trigger_query);
+		DBExecute($create_trigger_query);
+		// NGOCVB_START_CHANGE
+
+
 		$hosts = zbx_toArray($hosts);
 
 		$this->validateCreate($hosts);
@@ -790,6 +843,7 @@ class CHost extends CHostGeneral {
 				];
 				DB::insert('screens_items', $screenItemToAdd5);
 			} 
+
 			// NGOCVB_END_CHANGE
 
 			// Save groups. Groups must be added before calling massAdd() for permission validation to work.

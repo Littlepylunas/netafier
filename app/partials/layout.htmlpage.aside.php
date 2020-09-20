@@ -96,7 +96,7 @@ $search = (new CForm('get', 'netafier.php'))
 	->addClass(CViewHelper::loadSidebarMode() == ZBX_SIDEBAR_VIEW_MODE_COMPACT ? 'is-compact' : null)
 	->addClass(CViewHelper::loadSidebarMode() == ZBX_SIDEBAR_VIEW_MODE_HIDDEN ? 'is-hidden' : null)
 
-	->addItem([$logo, $header, $server_name, $search])
+	->addItem([$logo, $server_name, $search])
 	->addItem(
 		(new CDiv([
 			(new CTag('nav', true, APP::Component()->get('menu.main')->addClass('menu-main')))

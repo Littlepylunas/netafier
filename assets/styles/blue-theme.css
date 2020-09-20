@@ -1,22 +1,15 @@
-.row-odd-background {
-  background-color: #e5e9f1 !important;
-}
 
-.row-header-background {
-  background-color: #2e50ad !important;
-  color: white !important;
-}
 
 .list-table tbody tr:nth-of-type(odd) {
-  background-color: #e5e9f1 !important;
+  background-color: #e5e9f1;
 }
 
 .list-table thead tr{
-  background-color: #2e50ad !important;
+  background-color: #478bb3 ;
 }
 
 .list-table thead tr th, .list-table thead tr th a{
-  color: white !important;
+  color: white ;
 }
 
 .sidebar .server-name, .list-table .action-container .label, .dashbrd-grid-widget-head h4, .dashbrd-grid-iterator-head h4, .menu-popup .menu-popup-item, .menu-popup h3, .btn-back-map-container a:focus .btn-back-map .btn-back-map-content, .btn-back-map-container a:hover .btn-back-map .btn-back-map-content, .notif-body h4, .overlay-descr-url, .tag, .overflow-ellipsis, .overflow-ellipsis td, .overflow-ellipsis th, .overflow-ellipsis th a {
@@ -57,7 +50,7 @@ table {
 
 body {
   position: relative;
-  background-color: #ebeef0;
+  background-color: white;
   font-size: 75%;
   font-family: Verdana;
   line-height: 1.4em;
@@ -104,7 +97,7 @@ p {
 
 pre {
   font-family: "Courier New", Courier, monospace;
-  font-size: 1em; }
+  font-size: normal; }
 
 a:link {
   color: #0275b8;
@@ -651,7 +644,7 @@ footer {
     line-height: 14px; }
     .menu-main .submenu li.is-selected a {
       background: #ffffff;
-      border-left-color: #87d1ff;
+      border-left-color: #34af67;
       color: #173d6a; }
       .menu-main .submenu li.is-selected a:hover, .menu-main .submenu li.is-selected a:focus {
         background: #ffffff;
@@ -844,7 +837,7 @@ footer {
     background-position: -122px -325px; }
 
 .msg-details {
-  font-size: 1em;
+  font-size: normal;
   font-weight: normal;
   text-align: left; }
   .msg-details .link-action {
@@ -1267,8 +1260,7 @@ pre, pre a, pre td, pre span {
       border: 0;
       transition: background-color .2s ease-out; }
       .list-table thead th a:hover, .list-table thead th a:focus, .list-table thead th a:active {
-        text-decoration: none;
-        background-color: #e8f5ff; }
+        text-decoration: none; }
   .list-table tbody tr:hover {
     background-color: #e8f5ff; }
     .list-table tbody tr:hover .timeline-axis {
@@ -1521,12 +1513,11 @@ pre, pre a, pre td, pre span {
 
 .filter-container {
   background-color: #ffffff;
-  border: 1px solid #dfe4e7;
   margin: 0 0 10px;
   padding: 10px 0;
   position: relative; }
   .filter-container .table {
-    border-bottom: 1px solid #ebeef0; }
+    border-bottom: 1px solid #dfe4e7; }
   .filter-container .filter-forms {
     padding: 0 10px; }
     .filter-container .filter-forms .btn-grey {
@@ -1916,7 +1907,7 @@ input {
 
 textarea {
   font-family: Verdana;
-  font-size: 1em;
+  font-size: normal;
   padding: 4px 5px;
   margin: 0;
   overflow: auto; }
@@ -1927,7 +1918,7 @@ textarea {
 
 select {
   font-family: Verdana;
-  font-size: 1em;
+  font-size: normal;
   height: 24px;
   padding: 3px 3px 3px 0;
   background-color: #ffffff; }
@@ -2053,9 +2044,9 @@ button::-moz-focus-inner {
 
 button {
   font-family: Verdana;
-  font-size: 1em;
-  background-color: #09b403;
-  border: 1px solid #02970e;
+  font-size: normal;
+  background-color: #34af67;
+  border: 1px solid #2f9f5e;
   border-radius: 2px;
   color: #ffffff;
   margin: 0;
@@ -2219,11 +2210,11 @@ button {
       border-left: 0; }
     .ui-tabs-nav li.ui-tabs-active a {
       padding: 8px 10px 6px;
-      background-color: transparent;
-      color: #1f2c33;
+      background-color: #34af67;
+      color:white;
       text-decoration: none;
       cursor: default;
-      border-bottom: 3px solid #0275b8; }
+      border-bottom: 3px solid #34af67; }
     .ui-tabs-nav li.ui-state-disabled a {
       cursor: default;
       color: #acbbc2;
@@ -2670,7 +2661,7 @@ button[disabled], button[disabled]:hover, button[disabled]:active {
     display: inline-block;
     margin: 0 0 2px; }
   .signin-container button {
-    font-size: 1em;
+    font-size: normal;
     margin: 7px 0;
     min-height: 35px;
     line-height: 35px;
@@ -2752,7 +2743,8 @@ button[disabled], button[disabled]:hover, button[disabled]:active {
   bottom: 0;
   padding: .25rem;
   box-sizing: border-box;
-  border-radius: 15px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
   margin: 5px 5px 5px 5px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   display: flex;
@@ -2771,6 +2763,8 @@ button[disabled], button[disabled]:hover, button[disabled]:active {
   overflow: hidden;
   align-items: flex-start;
   border: 1px solid #dfe4e7;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   border-bottom: 0;
   background-color: #c1dcff;
   /*
@@ -2802,7 +2796,6 @@ button[disabled], button[disabled]:hover, button[disabled]:active {
   height: calc(100% - 2rem);
   padding-bottom: 8px;
   overflow: auto;
-  border: 1px solid #dfe4e7;
   background-color: #ffffff; }
   .dashbrd-grid-widget-content .list-table {
     border: 0; }

@@ -518,42 +518,42 @@ class CItem extends CItemGeneral {
 		unset($item);
 
 		// NGOCVB_START_CHANGE
-		//$itemids = DB::insert('items', $items);
-		$itemids = [];
-		// Update screens_items resourceid while add/update host items
-		foreach($items as $item) {
-			$itemid = DB::insert('items', [$item]);
-			$itemid = reset($itemid);
-			$item['itemid'] = $itemid;
-			$itemids[] = $itemid;
+		$itemids = DB::insert('items', $items);
+		// $itemids = [];
+		// // Update screens_items resourceid while add/update host items
+		// foreach($items as $item) {
+		// 	$itemid = DB::insert('items', [$item]);
+		// 	$itemid = reset($itemid);
+		// 	$item['itemid'] = $itemid;
+		// 	$itemids[] = $itemid;
 
-			$hostid = $item['hostid'];
-			$res = DBselect("SELECT screenid FROM screens 
-				where name = (select concat(host,'-screen') from hosts 
-					where hostid = '$hostid')");
-			$row = DBfetch($res);
-			$screenid = $row['screenid'];
-			$resourceid = $screenid * $screenid;
+		// 	$hostid = $item['hostid'];
+		// 	$res = DBselect("SELECT screenid FROM screens 
+		// 		where name = (select concat(host,'-screen') from hosts 
+		// 			where hostid = '$hostid')");
+		// 	$row = DBfetch($res);
+		// 	$screenid = $row['screenid'];
+		// 	$resourceid = $screenid * $screenid;
 
-			if ($item['key_'] == 'vm.memory.util[vm.memory.util.1]') {
-				$resourceid = $resourceid + 1;
-			}
-			elseif ($item['key_'] == 'sensor.temp.value[ciscoEnvMonTemperatureValue.1008]') {
-				$resourceid = $resourceid + 2;
-			}
-			elseif ($item['key_'] == 'icmppingsec') {
-				$resourceid = $resourceid + 3;
-			}
-			elseif ($item['key_'] == 'system.cpu.util[cpmCPUTotal5minRev.1]') {
-				$resourceid = $resourceid + 4;
-			}
-			else continue;
+		// 	if ($item['key_'] == 'vm.memory.util[vm.memory.util.1]') {
+		// 		$resourceid = $resourceid + 1;
+		// 	}
+		// 	elseif ($item['key_'] == 'sensor.temp.value[ciscoEnvMonTemperatureValue.1008]') {
+		// 		$resourceid = $resourceid + 2;
+		// 	}
+		// 	elseif ($item['key_'] == 'icmppingsec') {
+		// 		$resourceid = $resourceid + 3;
+		// 	}
+		// 	elseif ($item['key_'] == 'system.cpu.util[cpmCPUTotal5minRev.1]') {
+		// 		$resourceid = $resourceid + 4;
+		// 	}
+		// 	else continue;
 
-			$itemid = $item['itemid'];
-			DBExecute("UPDATE screens_items set resourceid = '$itemid' 
-				WHERE screenid = '$screenid' and resourceid = '$resourceid'");
+		// 	$itemid = $item['itemid'];
+		// 	DBExecute("UPDATE screens_items set resourceid = '$itemid' 
+		// 		WHERE screenid = '$screenid' and resourceid = '$resourceid'");
 			
-		}
+		// }
 		// NGOCVB_END_CHANGE
 
 		foreach ($items_rtdata as $key => &$value) {
