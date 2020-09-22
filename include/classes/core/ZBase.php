@@ -166,6 +166,7 @@ class ZBase {
 		// NGOCVB_START_CHANGE
 		// Change display_errors to On
 		ini_set('display_errors', 'On');
+		// NGOCVB_END_CHANGE
 		set_error_handler('zbx_err_handler');
 
 		switch ($mode) {
