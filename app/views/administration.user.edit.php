@@ -201,6 +201,7 @@ if ($data['action'] === 'userprofile.edit' || $data['db_user']['alias'] !== ZBX_
 
 $licence = explode('-', base64_decode(substr($data['url'], 5)));
 
+
 $user_form_list
 	->addRow((new CLabel(_('Refresh'), 'refresh'))->setAsteriskMark(),
 		(new CTextBox('refresh', $data['refresh']))
@@ -265,7 +266,7 @@ $user_form_list
 	->addRow(
 		(count(explode('-', base64_decode(substr($data['url'], 5)))) === 4) ? 
 			[
-				(new CSpan('Hosts limit: '))
+				(new CSpan('Hosts used: '))
 					->addClass('black')
 					->addClass('wrap'),
 				(new CSpan($licence[3]))

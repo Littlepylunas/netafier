@@ -718,13 +718,13 @@ class CHost extends CHostGeneral {
 			IF NEW.key_ = 'vm.memory.util[vm.memory.util.1]' THEN
 				resourceid:= resourceid + 1;
 			END IF;
-			IF NEW.key_ = 'sensor.temp.value[ciscoEnvMonTemperatureValue.1008]' THEN
+			IF NEW.key_ like 'sensor.temp.value[ciscoEnvMonTemperatureValue.%' THEN
 				resourceid:= resourceid + 2;
 			END IF;
 			IF NEW.key_ = 'icmppingsec' THEN
 				resourceid:= resourceid + 3;
 			END IF;
-			IF NEW.key_ = 'system.cpu.util[cpmCPUTotal5minRev.1]' THEN
+			IF NEW.key_ like 'system.cpu.util[cpmCPUTotal5minRev.1%' THEN
 				resourceid:= resourceid + 4;
 			END IF;
 			
