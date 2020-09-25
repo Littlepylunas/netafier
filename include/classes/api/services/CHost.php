@@ -708,30 +708,30 @@ class CHost extends CHostGeneral {
 		BEGIN
 			EXECUTE format('select host from hosts WHERE hostid = %s;', NEW.hostid) 
 			INTO hostname; 
+			IF lower(hostname) like '%switch%' THEN 
+				hostname:= concat(hostname, '-screen');
 
-			hostname:= concat(hostname, '-screen');
-
-			EXECUTE format('SELECT screenid FROM screens where name = ''%s'';', hostname) INTO screenid; 
-			
-			resourceid:= screenid * screenid;
-			
-			IF NEW.key_ = 'vm.memory.util[vm.memory.util.1]' THEN
-				resourceid:= resourceid + 1;
+				EXECUTE format('SELECT screenid FROM screens where name = ''%s'';', hostname) INTO screenid; 
+				
+				resourceid:= screenid * screenid;
+				
+				IF NEW.key_ = 'vm.memory.util[vm.memory.util.1]' THEN
+					resourceid:= resourceid + 1;
+				END IF;
+				IF NEW.key_ like 'sensor.temp.value[ciscoEnvMonTemperatureValue.%' THEN
+					resourceid:= resourceid + 2;
+				END IF;
+				IF NEW.key_ = 'icmppingsec' THEN
+					resourceid:= resourceid + 3;
+				END IF;
+				IF NEW.key_ like 'system.cpu.util[cpmCPUTotal5minRev.1%' THEN
+					resourceid:= resourceid + 4;
+				END IF;
+				
+				EXECUTE format('UPDATE screens_items set resourceid = %s 
+					WHERE screenid = %s and resourceid = %s;', 
+					NEW.itemid, screenid, resourceid);
 			END IF;
-			IF NEW.key_ like 'sensor.temp.value[ciscoEnvMonTemperatureValue.%' THEN
-				resourceid:= resourceid + 2;
-			END IF;
-			IF NEW.key_ = 'icmppingsec' THEN
-				resourceid:= resourceid + 3;
-			END IF;
-			IF NEW.key_ like 'system.cpu.util[cpmCPUTotal5minRev.1%' THEN
-				resourceid:= resourceid + 4;
-			END IF;
-			
-			EXECUTE format('UPDATE screens_items set resourceid = %s 
-				WHERE screenid = %s and resourceid = %s;', 
-				NEW.itemid, screenid, resourceid);
-			
 			RETURN NEW;
 		END;
 		$function_name LANGUAGE plpgsql;";

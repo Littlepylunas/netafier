@@ -200,7 +200,7 @@ if ($data['action'] === 'userprofile.edit' || $data['db_user']['alias'] !== ZBX_
 }
 
 $licence = explode('-', base64_decode(substr($data['url'], 5)));
-
+// $res = DBExecute('select count(*) from hosts where')
 
 $user_form_list
 	->addRow((new CLabel(_('Refresh'), 'refresh'))->setAsteriskMark(),
@@ -258,7 +258,7 @@ $user_form_list
 					->addClass('wrap'),
 				(new CSpan($licence[2]))
 					->addClass('blue')
-					->addClass('wrap')
+					->addClass('wrap'),
 			]
 			: 
 			null			
