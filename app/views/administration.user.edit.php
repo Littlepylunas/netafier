@@ -199,8 +199,13 @@ if ($data['action'] === 'userprofile.edit' || $data['db_user']['alias'] !== ZBX_
 	]);
 }
 
+// NGOCVB_START_CHANGE
+// Prepare data license
 $licence = explode('-', base64_decode(substr($data['url'], 5)));
-// $res = DBExecute('select count(*) from hosts where')
+$res = DBselect('select count(*) as count from hosts where hostid > 10368');
+$res = DBFetch($res);
+$count = $res['count'];
+// NGOCVB_END_CHANGE
 
 $user_form_list
 	->addRow((new CLabel(_('Refresh'), 'refresh'))->setAsteriskMark(),
@@ -219,7 +224,7 @@ $user_form_list
 		(new CTextBox('url', $data['url']))->setWidth(ZBX_TEXTAREA_STANDARD_WIDTH)
 	)
 	->addRow(
-		($data['url'] === '') ? 
+		($data['url'] == null) ? 
 			(new CSpan('No licence key is actived. You have 30 days trial.'))
 				->addClass('red')
 				->addClass('wrap')
@@ -268,6 +273,12 @@ $user_form_list
 			[
 				(new CSpan('Hosts used: '))
 					->addClass('black')
+					->addClass('wrap'),
+				(new CSpan($count))
+					->addClass('blue')
+					->addClass('wrap'),
+				(new CSpan('/'))
+					->addClass('blue')
 					->addClass('wrap'),
 				(new CSpan($licence[3]))
 					->addClass('blue')
