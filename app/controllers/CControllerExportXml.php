@@ -50,11 +50,11 @@ class CControllerExportXml extends CController {
 
 			case 'export.hosts.xml':
 			case 'export.templates.xml':
-				return (CWebUser::$data['type'] >= USER_TYPE_ZABBIX_ADMIN);
+				return (CWebUser::$data['type'] >= USER_TYPE_NETAFIER_ADMIN);
 
 			case 'export.screens.xml':
 			case 'export.sysmaps.xml':
-				return (CWebUser::$data['type'] >= USER_TYPE_ZABBIX_USER);
+				return (CWebUser::$data['type'] >= USER_TYPE_NETAFIER_USER);
 
 			default:
 				return false;

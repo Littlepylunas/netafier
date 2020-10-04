@@ -91,7 +91,7 @@ class CScreen extends CApiService {
 		}
 
 		// Editable + permission check.
-		if ($user_data['type'] != USER_TYPE_SUPER_ADMIN && $user_data['type'] != USER_TYPE_ZABBIX_ADMIN
+		if ($user_data['type'] != USER_TYPE_SUPER_ADMIN && $user_data['type'] != USER_TYPE_NETAFIER_ADMIN
 				&& !$options['nopermissions']) {
 			$public_screens = '';
 
@@ -475,7 +475,7 @@ class CScreen extends CApiService {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Screen owner cannot be empty.'));
 				}
 				elseif ($screen['userid'] != $user_data['userid'] && $user_data['type'] != USER_TYPE_SUPER_ADMIN
-						&& $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+						&& $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Only administrators can set screen owner.'));
 				}
 			}
@@ -814,7 +814,7 @@ class CScreen extends CApiService {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Screen owner cannot be empty.'));
 				}
 				elseif ($screen['userid'] != $user_data['userid'] && $user_data['type'] != USER_TYPE_SUPER_ADMIN
-						&& $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+						&& $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Only administrators can set screen owner.'));
 				}
 			}

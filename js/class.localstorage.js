@@ -540,7 +540,7 @@ ZBX_LocalStorageKey.prototype.publish = function(payload) {
 	});
 };
 
-ZABBIX.namespace(
+NETAFIER.namespace(
 	'instances.localStorage',
 	new ZBX_LocalStorage('1', window.ZBX_SESSION_NAME)
 );

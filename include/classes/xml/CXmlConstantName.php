@@ -48,7 +48,7 @@ class CXmlConstantName {
 	const NO = 'NO';
 	const YES = 'YES';
 
-	const ZABBIX = 'ZABBIX';
+	const NETAFIER = 'NETAFIER';
 	const SNMP = 'SNMP';
 	const IPMI = 'IPMI';
 	const JMX = 'JMX';
@@ -206,14 +206,14 @@ class CXmlConstantName {
 	const AUTHNOPRIV = 'AUTHNOPRIV';
 	const AUTHPRIV = 'AUTHPRIV';
 
-	const ZABBIX_PASSIVE = 'ZABBIX_PASSIVE';
+	const NETAFIER_PASSIVE = 'NETAFIER_PASSIVE';
 	const SNMPV1 = 'SNMPV1'; // Used by item type in 4.4 and as interface SNMP version in 5.0.
 	const TRAP = 'TRAP';
 	// const SIMPLE = 'SIMPLE'; // Duplicate.
 	const SNMPV2 = 'SNMPV2'; // Used by item type in 4.4 and as interface SNMP version in 5.0.
 	const INTERNAL = 'INTERNAL';
 	const SNMPV3 = 'SNMPV3'; // Used by item type in 4.4 and as interface SNMP version in 5.0.
-	const ZABBIX_ACTIVE = 'ZABBIX_ACTIVE';
+	const NETAFIER_ACTIVE = 'NETAFIER_ACTIVE';
 	const AGGREGATE = 'AGGREGATE';
 	const EXTERNAL = 'EXTERNAL';
 	const ODBC = 'ODBC';

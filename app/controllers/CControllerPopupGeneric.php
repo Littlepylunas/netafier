@@ -46,7 +46,7 @@ class CControllerPopupGeneric extends CController {
 	 *
 	 * @var array
 	 */
-	const ALLOWED_ITEM_TYPES = [ITEM_TYPE_ZABBIX, ITEM_TYPE_ZABBIX_ACTIVE, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL,
+	const ALLOWED_ITEM_TYPES = [ITEM_TYPE_NETAFIER, ITEM_TYPE_NETAFIER_ACTIVE, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL,
 		ITEM_TYPE_AGGREGATE, ITEM_TYPE_IPMI, ITEM_TYPE_SNMPTRAP, ITEM_TYPE_DB_MONITOR, ITEM_TYPE_JMX
 	];
 
@@ -114,7 +114,7 @@ class CControllerPopupGeneric extends CController {
 		$this->popup_properties = [
 			'hosts' => [
 				'title' => _('Hosts'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'hostid,host',
 				'form' => [
 					'name' => 'hostform',
@@ -126,7 +126,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'templates' => [
 				'title' => _('Templates'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'hostid,host',
 				'form' => [
 					'name' => 'templateform',
@@ -138,7 +138,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'host_templates' => [
 				'title' => _('Hosts'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'hostid,host',
 				'form' => [
 					'name' => 'hosttemplateform',
@@ -150,7 +150,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'host_groups' => [
 				'title' => _('Host groups'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'groupid,name',
 				'form' => [
 					'name' => 'hostGroupsform',
@@ -162,7 +162,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'proxies' => [
 				'title' => _('Proxies'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'proxyid,host',
 				'form' => [
 					'name' => 'proxiesform',
@@ -174,7 +174,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'applications' => [
 				'title' => _('Applications'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'applicationid,name',
 				'form' => [
 					'name' => 'applicationform',
@@ -186,7 +186,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'application_prototypes' => [
 				'title' => _('Application prototypes'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'application_prototypeid,name',
 				'form' => [
 					'name' => 'application_prototype_form',
@@ -198,7 +198,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'triggers' => [
 				'title' => _('Triggers'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'description,triggerid,expression',
 				'form' => [
 					'name' => 'triggerform',
@@ -212,7 +212,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'trigger_prototypes' => [
 				'title' => _('Trigger prototypes'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'description,triggerid,expression',
 				'form' => [
 					'name' => 'trigger_prototype_form',
@@ -226,7 +226,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'usrgrp' => [
 				'title' => _('User groups'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'usrgrpid,name',
 				'form' => [
 					'name' => 'usrgrpform',
@@ -238,7 +238,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'users' => [
 				'title' => _('Users'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'usergrpid,alias,fullname,userid',
 				'form' => [
 					'name' => 'userform',
@@ -252,7 +252,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'items' => [
 				'title' => _('Items'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'itemid,name',
 				'form' => [
 					'name' => 'itemform',
@@ -268,7 +268,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'help_items' => [
 				'title' => _('Standard items'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'key',
 				'table_columns' => [
 					_('Key'),
@@ -277,7 +277,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'screens' => [
 				'title' => _('Screens'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'screenid',
 				'form' => [
 					'name' => 'screenform',
@@ -289,7 +289,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'graphs' => [
 				'title' => _('Graphs'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'graphid,name',
 				'form' => [
 					'name' => 'graphform',
@@ -302,7 +302,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'graph_prototypes' => [
 				'title' => _('Graph prototypes'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'graphid,name',
 				'form' => [
 					'name' => 'graphform',
@@ -315,7 +315,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'item_prototypes' => [
 				'title' => _('Item prototypes'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'itemid,name,flags',
 				'form' => [
 					'name' => 'itemform',
@@ -330,7 +330,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'sysmaps' => [
 				'title' => _('Maps'),
-				'min_user_type' => USER_TYPE_ZABBIX_USER,
+				'min_user_type' => USER_TYPE_NETAFIER_USER,
 				'allowed_src_fields' => 'sysmapid,name',
 				'form' => [
 					'name' => 'sysmapform',
@@ -342,7 +342,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'drules' => [
 				'title' => _('Discovery rules'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'druleid,name',
 				'form' => [
 					'name' => 'druleform',
@@ -354,7 +354,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'dchecks' => [
 				'title' => _('Discovery checks'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'dcheckid,name',
 				'table_columns' => [
 					_('Name')
@@ -362,7 +362,7 @@ class CControllerPopupGeneric extends CController {
 			],
 			'scripts' => [
 				'title' => _('Global scripts'),
-				'min_user_type' => USER_TYPE_ZABBIX_ADMIN,
+				'min_user_type' => USER_TYPE_NETAFIER_ADMIN,
 				'allowed_src_fields' => 'scriptid,name',
 				'form' => [
 					'name' => 'scriptform',

@@ -32,7 +32,7 @@ class CControllerUserCreate extends CControllerUserUpdateGeneral {
 			'surname' =>		'db users.surname',
 			'password1' =>		'required|string',
 			'password2' =>		'required|string',
-			'type' =>			'db users.type|in '.USER_TYPE_ZABBIX_USER.','.USER_TYPE_ZABBIX_ADMIN.','.USER_TYPE_SUPER_ADMIN,
+			'type' =>			'db users.type|in '.USER_TYPE_NETAFIER_USER.','.USER_TYPE_NETAFIER_ADMIN.','.USER_TYPE_SUPER_ADMIN,
 			'user_groups' =>	'required|array_id|not_empty',
 			'user_medias' =>	'array',
 			'lang' =>			'db users.lang|in '.implode(',', $locales),

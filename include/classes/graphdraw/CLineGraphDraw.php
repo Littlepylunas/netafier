@@ -2140,7 +2140,7 @@ class CLineGraphDraw extends CGraphDraw {
 				$delay = $this->items[$item]['delay'];
 
 				if ($this->items[$item]['type'] == ITEM_TYPE_TRAPPER
-						|| ($this->items[$item]['type'] == ITEM_TYPE_ZABBIX_ACTIVE
+						|| ($this->items[$item]['type'] == ITEM_TYPE_NETAFIER_ACTIVE
 							&& preg_match('/^(event)?log(rt)?\[/', $this->items[$item]['key_']))
 						|| ($this->items[$item]['has_scheduling_intervals'] && $delay == 0)) {
 					$draw = true;

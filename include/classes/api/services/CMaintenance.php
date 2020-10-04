@@ -259,7 +259,7 @@ class CMaintenance extends CApiService {
 	 */
 	public function create(array $maintenances) {
 		$maintenances = zbx_toArray($maintenances);
-		if (self::$userData['type'] == USER_TYPE_ZABBIX_USER) {
+		if (self::$userData['type'] == USER_TYPE_NETAFIER_USER) {
 			self::exception(ZBX_API_ERROR_PERMISSIONS, _('No permissions to referred object or it does not exist!'));
 		}
 
@@ -522,7 +522,7 @@ class CMaintenance extends CApiService {
 	 * @return array
 	 */
 	public function update(array $maintenances) {
-		if (self::$userData['type'] == USER_TYPE_ZABBIX_USER) {
+		if (self::$userData['type'] == USER_TYPE_NETAFIER_USER) {
 			self::exception(ZBX_API_ERROR_PERMISSIONS, _('You do not have permission to perform this operation.'));
 		}
 
@@ -953,7 +953,7 @@ class CMaintenance extends CApiService {
 	 * @return array
 	 */
 	public function delete(array $maintenanceids) {
-		if (self::$userData['type'] == USER_TYPE_ZABBIX_USER) {
+		if (self::$userData['type'] == USER_TYPE_NETAFIER_USER) {
 			self::exception(ZBX_API_ERROR_PERMISSIONS, _('You do not have permission to perform this operation.'));
 		}
 

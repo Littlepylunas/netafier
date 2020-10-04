@@ -155,7 +155,7 @@ class CMap extends CMapElement {
 		];
 
 		// Editable + permission check.
-		if (self::$userData['type'] < USER_TYPE_ZABBIX_ADMIN && !$options['nopermissions']) {
+		if (self::$userData['type'] < USER_TYPE_NETAFIER_ADMIN && !$options['nopermissions']) {
 			$public_maps = '';
 
 			if ($options['editable']) {
@@ -654,7 +654,7 @@ class CMap extends CMapElement {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Map owner cannot be empty.'));
 				}
 				elseif ($map['userid'] != $user_data['userid'] && $user_data['type'] != USER_TYPE_SUPER_ADMIN
-						&& $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+						&& $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Only administrators can set map owner.'));
 				}
 			}
@@ -1104,7 +1104,7 @@ class CMap extends CMapElement {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Map owner cannot be empty.'));
 				}
 				elseif ($map['userid'] != $user_data['userid'] && $user_data['type'] != USER_TYPE_SUPER_ADMIN
-						&& $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+						&& $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 					self::exception(ZBX_API_ERROR_PARAMETERS, _('Only administrators can set map owner.'));
 				}
 			}

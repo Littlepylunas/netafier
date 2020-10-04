@@ -159,11 +159,11 @@ if (hasRequest('add') || hasRequest('update')) {
 		$map['sysmapid'] = getRequest('sysmapid');
 
 		// Only administrators can set map owner.
-		if (CWebUser::getType() == USER_TYPE_ZABBIX_USER) {
+		if (CWebUser::getType() == USER_TYPE_NETAFIER_USER) {
 			unset($map['userid']);
 		}
 		// Map update with inaccessible user.
-		elseif (CWebUser::getType() == USER_TYPE_ZABBIX_ADMIN && $map['userid'] === '') {
+		elseif (CWebUser::getType() == USER_TYPE_NETAFIER_ADMIN && $map['userid'] === '') {
 			$user_exist = API::User()->get([
 				'output' => ['userid'],
 				'userids' => [$sysmap['userid']]

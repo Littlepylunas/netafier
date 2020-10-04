@@ -46,7 +46,7 @@ class CControllerSearch extends CController {
 		$this->disableSIDValidation();
 
 		$this->admin = in_array($this->getUserType(), [
-			USER_TYPE_ZABBIX_ADMIN,
+			USER_TYPE_NETAFIER_ADMIN,
 			USER_TYPE_SUPER_ADMIN
 		]);
 	}
@@ -62,7 +62,7 @@ class CControllerSearch extends CController {
 	}
 
 	protected function checkPermissions() {
-		return ($this->getUserType() >= USER_TYPE_ZABBIX_USER);
+		return ($this->getUserType() >= USER_TYPE_NETAFIER_USER);
 	}
 
 	protected function doAction() {

@@ -59,7 +59,7 @@ class CHelpItems {
 	 */
 	protected function getItems() {
 		return [
-			ITEM_TYPE_ZABBIX => [
+			ITEM_TYPE_NETAFIER => [
 				[
 					'key' => 'agent.hostname',
 					'description' => _('Agent host name. Returns string')
@@ -357,7 +357,7 @@ class CHelpItems {
 					'description' => _('Number of items in the queue which are delayed in Zabbix server or proxy by "from" till "to" seconds, inclusive.')
 				]
 			],
-			ITEM_TYPE_ZABBIX_ACTIVE => [
+			ITEM_TYPE_NETAFIER_ACTIVE => [
 				[
 					'key' => 'agent.hostname',
 					'description' => _('Agent host name. Returns string')

@@ -278,7 +278,7 @@ function update_config($config) {
 		}
 
 		if ($msg) {
-			add_audit(AUDIT_ACTION_UPDATE, AUDIT_RESOURCE_ZABBIX_CONFIG, implode('; ', $msg));
+			add_audit(AUDIT_ACTION_UPDATE, AUDIT_RESOURCE_NETAFIER_CONFIG, implode('; ', $msg));
 		}
 	}
 

@@ -161,7 +161,7 @@ if ($page['type'] == PAGE_TYPE_HTML) {
 	// Show GUI messages in pages with menus and in fullscreen mode.
 	if (!defined('ZBX_PAGE_NO_JSLOADER')) {
 		$pageHeader->addJsFile((new CUrl('jsLoader.php'))
-			->setArgument('ver', ZABBIX_VERSION)
+			->setArgument('ver', NETAFIER_VERSION)
 			->setArgument('lang', CWebUser::$data['lang'])
 			->setArgument('showGuiMessaging', ($is_standard_page && !CWebUser::isGuest()) ? 1 : null)
 			->getUrl()
@@ -169,7 +169,7 @@ if ($page['type'] == PAGE_TYPE_HTML) {
 
 		if ($page['scripts']) {
 			$pageHeader->addJsFile((new CUrl('jsLoader.php'))
-				->setArgument('ver', ZABBIX_VERSION)
+				->setArgument('ver', NETAFIER_VERSION)
 				->setArgument('lang', CWebUser::$data['lang'])
 				->setArgument('files', $page['scripts'])
 				->getUrl()

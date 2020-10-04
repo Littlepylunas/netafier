@@ -35,7 +35,7 @@ abstract class CControllerPopupItemTest extends CController {
 	 *
 	 * @var array
 	 */
-	private static $testable_item_types = [ITEM_TYPE_ZABBIX, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL, ITEM_TYPE_AGGREGATE,
+	private static $testable_item_types = [ITEM_TYPE_NETAFIER, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL, ITEM_TYPE_AGGREGATE,
 		ITEM_TYPE_EXTERNAL, ITEM_TYPE_DB_MONITOR, ITEM_TYPE_HTTPAGENT, ITEM_TYPE_SSH, ITEM_TYPE_TELNET, ITEM_TYPE_JMX,
 		ITEM_TYPE_CALCULATED
 	];
@@ -51,7 +51,7 @@ abstract class CControllerPopupItemTest extends CController {
 	 * @var array
 	 */
 	protected $items_require_interface = [
-		ITEM_TYPE_ZABBIX => [
+		ITEM_TYPE_NETAFIER => [
 			'address' => true,
 			'port' => true
 		],
@@ -82,7 +82,7 @@ abstract class CControllerPopupItemTest extends CController {
 	 *
 	 * @var array
 	 */
-	protected $items_support_proxy = [ITEM_TYPE_ZABBIX, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL, ITEM_TYPE_EXTERNAL,
+	protected $items_support_proxy = [ITEM_TYPE_NETAFIER, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL, ITEM_TYPE_EXTERNAL,
 		ITEM_TYPE_DB_MONITOR, ITEM_TYPE_HTTPAGENT, ITEM_TYPE_IPMI, ITEM_TYPE_SSH, ITEM_TYPE_TELNET, ITEM_TYPE_JMX,
 		ITEM_TYPE_SNMP
 	];
@@ -92,7 +92,7 @@ abstract class CControllerPopupItemTest extends CController {
 	 *
 	 * @var array
 	 */
-	protected $item_types_has_key_mandatory = [ITEM_TYPE_ZABBIX, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL,
+	protected $item_types_has_key_mandatory = [ITEM_TYPE_NETAFIER, ITEM_TYPE_SIMPLE, ITEM_TYPE_INTERNAL,
 		ITEM_TYPE_AGGREGATE, ITEM_TYPE_EXTERNAL, ITEM_TYPE_DB_MONITOR, ITEM_TYPE_HTTPAGENT, ITEM_TYPE_IPMI,
 		ITEM_TYPE_SSH, ITEM_TYPE_TELNET, ITEM_TYPE_JMX, ITEM_TYPE_CALCULATED
 	];
@@ -266,7 +266,7 @@ abstract class CControllerPopupItemTest extends CController {
 	}
 
 	protected function checkPermissions() {
-		$ret = ($this->getUserType() >= USER_TYPE_ZABBIX_ADMIN);
+		$ret = ($this->getUserType() >= USER_TYPE_NETAFIER_ADMIN);
 
 		/*
 		 * Preprocessing test can be done from mass-update section so host is non mandatory but if it is used, it must
@@ -414,7 +414,7 @@ abstract class CControllerPopupItemTest extends CController {
 		}
 
 		switch ($this->item_type) {
-			case ITEM_TYPE_ZABBIX:
+			case ITEM_TYPE_NETAFIER:
 				$data += [
 					'key' => array_key_exists('key', $input) ? $input['key'] : null,
 					'interface' => $this->getHostInterface($interface_input)

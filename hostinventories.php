@@ -113,7 +113,7 @@ if ($hostId > 0) {
 	if ($userType == USER_TYPE_SUPER_ADMIN) {
 		$data['rwHost'] = true;
 	}
-	elseif ($userType == USER_TYPE_ZABBIX_ADMIN) {
+	elseif ($userType == USER_TYPE_NETAFIER_ADMIN) {
 		$rwHost = API::Host()->get([
 			'output' => ['hostid'],
 			'hostids' => $hostId,

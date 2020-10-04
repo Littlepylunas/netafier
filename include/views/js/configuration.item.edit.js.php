@@ -63,8 +63,8 @@ zbx_subarray_push($this->data['valueTypeVisibility'], ITEM_VALUE_TYPE_UINT64, 'r
 				asterisk = '<?= ZBX_STYLE_FIELD_LABEL_ASTERISK ?>';
 
 			$('#keyButton').prop('disabled',
-				type != <?= ITEM_TYPE_ZABBIX ?>
-					&& type != <?= ITEM_TYPE_ZABBIX_ACTIVE ?>
+				type != <?= ITEM_TYPE_NETAFIER ?>
+					&& type != <?= ITEM_TYPE_NETAFIER_ACTIVE ?>
 					&& type != <?= ITEM_TYPE_SIMPLE ?>
 					&& type != <?= ITEM_TYPE_INTERNAL ?>
 					&& type != <?= ITEM_TYPE_AGGREGATE ?>

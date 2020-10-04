@@ -120,11 +120,11 @@ if (hasRequest('add') || hasRequest('update')) {
 		];
 
 		// Only administrators can set slide show owner.
-		if (CWebUser::getType() == USER_TYPE_ZABBIX_USER) {
+		if (CWebUser::getType() == USER_TYPE_NETAFIER_USER) {
 			unset($data['userid']);
 		}
 		// Slide show update with inaccessible user.
-		elseif (CWebUser::getType() == USER_TYPE_ZABBIX_ADMIN && $data['userid'] === '') {
+		elseif (CWebUser::getType() == USER_TYPE_NETAFIER_ADMIN && $data['userid'] === '') {
 			$user_exist = API::User()->get([
 				'output' => ['userid'],
 				'userids' => [$data['userid']]
@@ -301,7 +301,7 @@ if (hasRequest('form')) {
 			'userGroups' => getRequest('userGroups', [])
 		];
 		if (hasRequest('form_refresh')) {
-			if (CWebUser::getType() == USER_TYPE_SUPER_ADMIN || CWebUser::getType() == USER_TYPE_ZABBIX_ADMIN) {
+			if (CWebUser::getType() == USER_TYPE_SUPER_ADMIN || CWebUser::getType() == USER_TYPE_NETAFIER_ADMIN) {
 				$data['slideshow']['userid'] = getRequest('userid', '');
 			}
 			else {

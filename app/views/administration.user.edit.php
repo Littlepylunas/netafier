@@ -292,7 +292,7 @@ $user_form_list
 $tabs->addTab('userTab', _('User'), $user_form_list);
 
 // Media tab.
-if ($data['action'] === 'user.edit' || CWebUser::$data['type'] > USER_TYPE_ZABBIX_USER) {
+if ($data['action'] === 'user.edit' || CWebUser::$data['type'] > USER_TYPE_NETAFIER_USER) {
 	$media_form_list = new CFormList('userMediaFormList');
 	$user_form->addVar('user_medias', $data['user_medias']);
 

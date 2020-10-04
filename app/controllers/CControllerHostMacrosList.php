@@ -47,7 +47,7 @@ class CControllerHostMacrosList extends CController {
 	}
 
 	protected function checkPermissions() {
-		$allow = ($this->getUserType() >= USER_TYPE_ZABBIX_ADMIN);
+		$allow = ($this->getUserType() >= USER_TYPE_NETAFIER_ADMIN);
 
 		if ($allow && $this->hasInput('parent_hostid')) {
 			$parent_host = API::Host()->get([

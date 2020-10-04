@@ -260,7 +260,7 @@ function get_slideshow_by_slideshowid($slideshowid, $permission) {
 	$user_data = CWebUser::$data;
 
 	$condition = '';
-	if ($user_data['type'] != USER_TYPE_SUPER_ADMIN && $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+	if ($user_data['type'] != USER_TYPE_SUPER_ADMIN && $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 		$public_slideshows = '';
 
 		if ($permission == PERM_READ) {
@@ -352,7 +352,7 @@ function add_slideshow($data) {
 		return false;
 	}
 	elseif ($data['userid'] != $user_data['userid'] && $user_data['type'] != USER_TYPE_SUPER_ADMIN
-			&& $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+			&& $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 		error(_('Only administrators can set slide show owner.'));
 
 		return false;
@@ -485,7 +485,7 @@ function update_slideshow($data) {
 			return false;
 		}
 		elseif ($data['userid'] != $user_data['userid'] && $user_data['type'] != USER_TYPE_SUPER_ADMIN
-				&& $user_data['type'] != USER_TYPE_ZABBIX_ADMIN) {
+				&& $user_data['type'] != USER_TYPE_NETAFIER_ADMIN) {
 			error(_('Only administrators can set slide show owner.'));
 
 			return false;

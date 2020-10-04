@@ -100,7 +100,7 @@ class CTask extends CApiService {
 	 * @throws APIException if the input is invalid.
 	 */
 	protected function validateCreate(array &$task) {
-		if (self::$userData['type'] < USER_TYPE_ZABBIX_ADMIN) {
+		if (self::$userData['type'] < USER_TYPE_NETAFIER_ADMIN) {
 			self::exception(ZBX_API_ERROR_PERMISSIONS, _('You do not have permission to perform this operation.'));
 		}
 

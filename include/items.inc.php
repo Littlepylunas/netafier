@@ -83,8 +83,8 @@ function get_item_logtype_style($logtype) {
  */
 function item_type2str($type = null) {
 	$types = [
-		ITEM_TYPE_ZABBIX => _('Zabbix agent'),
-		ITEM_TYPE_ZABBIX_ACTIVE => _('Zabbix agent (active)'),
+		ITEM_TYPE_NETAFIER => _('Zabbix agent'),
+		ITEM_TYPE_NETAFIER_ACTIVE => _('Zabbix agent (active)'),
 		ITEM_TYPE_SIMPLE => _('Simple check'),
 		ITEM_TYPE_SNMP => _('SNMP agent'),
 		ITEM_TYPE_SNMPTRAP => _('SNMP trap'),
@@ -356,7 +356,7 @@ function itemTypeInterface($type = null) {
 		ITEM_TYPE_SNMP =>  INTERFACE_TYPE_SNMP,
 		ITEM_TYPE_SNMPTRAP => INTERFACE_TYPE_SNMP,
 		ITEM_TYPE_IPMI => INTERFACE_TYPE_IPMI,
-		ITEM_TYPE_ZABBIX => INTERFACE_TYPE_AGENT,
+		ITEM_TYPE_NETAFIER => INTERFACE_TYPE_AGENT,
 		ITEM_TYPE_SIMPLE => INTERFACE_TYPE_ANY,
 		ITEM_TYPE_EXTERNAL => INTERFACE_TYPE_ANY,
 		ITEM_TYPE_SSH => INTERFACE_TYPE_ANY,
@@ -1956,7 +1956,7 @@ function expandItemNamesWithMasterItems($items, $data_source) {
  */
 function checkNowAllowedTypes() {
 	return [
-		ITEM_TYPE_ZABBIX,
+		ITEM_TYPE_NETAFIER,
 		ITEM_TYPE_SIMPLE,
 		ITEM_TYPE_INTERNAL,
 		ITEM_TYPE_AGGREGATE,

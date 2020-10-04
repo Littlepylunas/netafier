@@ -18,15 +18,15 @@
 **/
 
 
-ZABBIX.namespace('classes.Observer');
+NETAFIER.namespace('classes.Observer');
 
-ZABBIX.classes.Observer = (function() {
+NETAFIER.classes.Observer = (function() {
 	var Observer = function() {
 		this.listeners = {};
 	};
 
 	Observer.prototype = {
-		constructor: ZABBIX.classes.Observer,
+		constructor: NETAFIER.classes.Observer,
 
 		bind: function(event, callback) {
 			var i;
@@ -86,11 +86,11 @@ ZABBIX.classes.Observer = (function() {
 	return Observer;
 }());
 
-ZABBIX.namespace('apps.map');
+NETAFIER.namespace('apps.map');
 
-ZABBIX.apps.map = (function($) {
+NETAFIER.apps.map = (function($) {
 	// dependencies
-	var Observer = ZABBIX.classes.Observer;
+	var Observer = NETAFIER.classes.Observer;
 
 	function createMap(containerId, mapData) {
 		var CMap = function(containerId, mapData) {

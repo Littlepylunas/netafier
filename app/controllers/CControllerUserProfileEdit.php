@@ -44,7 +44,7 @@ class CControllerUserProfileEdit extends CControllerUserEditGeneral {
 			'form_refresh' =>		'int32'
 		];
 
-		if (CWebUser::$data['type'] > USER_TYPE_ZABBIX_USER) {
+		if (CWebUser::$data['type'] > USER_TYPE_NETAFIER_USER) {
 			$fields += [
 				'user_medias' =>	'array',
 				'new_media' =>		'array',
@@ -71,7 +71,7 @@ class CControllerUserProfileEdit extends CControllerUserEditGeneral {
 			'output' => ['alias', 'name', 'surname', 'lang', 'theme', 'autologin', 'autologout', 'refresh',
 				'rows_per_page', 'url'
 			],
-			'selectMedias' => (CWebUser::$data['type'] > USER_TYPE_ZABBIX_USER)
+			'selectMedias' => (CWebUser::$data['type'] > USER_TYPE_NETAFIER_USER)
 				? ['mediatypeid', 'period', 'sendto', 'severity', 'active']
 				: null,
 			'userids' => CWebUser::$data['userid'],
@@ -121,7 +121,7 @@ class CControllerUserProfileEdit extends CControllerUserEditGeneral {
 			'action' => $this->getAction()
 		];
 
-		if (CWebUser::$data['type'] > USER_TYPE_ZABBIX_USER) {
+		if (CWebUser::$data['type'] > USER_TYPE_NETAFIER_USER) {
 			$data['user_medias'] = $this->user['medias'];
 		}
 
@@ -130,7 +130,7 @@ class CControllerUserProfileEdit extends CControllerUserEditGeneral {
 			'rows_per_page', 'url', 'form_refresh'
 		]);
 
-		if (CWebUser::$data['type'] > USER_TYPE_ZABBIX_USER) {
+		if (CWebUser::$data['type'] > USER_TYPE_NETAFIER_USER) {
 			if ($data['form_refresh'] != 0) {
 				$data['user_medias'] = $this->getInput('user_medias', []);
 			}

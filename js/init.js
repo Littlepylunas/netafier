@@ -22,7 +22,7 @@
  * An object that is used to namespace objects, allows to retrieve and write objects via arbitrary path.
  */
 
-window.ZABBIX = Object.create({
+window.NETAFIER = Object.create({
 
 	/**
 	 * @param {string} path  Dot separated path. Each segment is used as object key.

@@ -46,7 +46,7 @@ class CControllerReportServices extends CController {
 	}
 
 	protected function checkPermissions() {
-		if ($this->getUserType() < USER_TYPE_ZABBIX_USER) {
+		if ($this->getUserType() < USER_TYPE_NETAFIER_USER) {
 			return false;
 		}
 

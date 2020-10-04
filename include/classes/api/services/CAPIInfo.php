@@ -35,6 +35,6 @@ class CAPIInfo extends CApiService {
 			self::exception(ZBX_API_ERROR_PARAMETERS, $error);
 		}
 
-		return ZABBIX_API_VERSION;
+		return NETAFIER_API_VERSION;
 	}
 }

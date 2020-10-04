@@ -62,7 +62,7 @@ foreach ($titles as $key => $title) {
 			->setChecked($data['rules'][$key]['updateExisting']);
 
 		if ($key !== 'maps' && $key !== 'screens' && $user_type != USER_TYPE_SUPER_ADMIN
-				&& $user_type != USER_TYPE_ZABBIX_ADMIN) {
+				&& $user_type != USER_TYPE_NETAFIER_ADMIN) {
 			$cbExist->setAttribute('disabled', 'disabled');
 		}
 
@@ -83,7 +83,7 @@ foreach ($titles as $key => $title) {
 	}
 
 	if ($key !== 'maps' && $key !== 'screens' && $user_type != USER_TYPE_SUPER_ADMIN
-			&& $user_type != USER_TYPE_ZABBIX_ADMIN) {
+			&& $user_type != USER_TYPE_NETAFIER_ADMIN) {
 		$cbMissed->setAttribute('disabled', 'disabled');
 	}
 
@@ -93,7 +93,7 @@ foreach ($titles as $key => $title) {
 			->addClass('deleteMissing');
 
 		if ($key !== 'maps' && $key !== 'screens' && $user_type != USER_TYPE_SUPER_ADMIN
-				&& $user_type != USER_TYPE_ZABBIX_ADMIN) {
+				&& $user_type != USER_TYPE_NETAFIER_ADMIN) {
 			$cbDeleted->setAttribute('disabled', 'disabled');
 		}
 

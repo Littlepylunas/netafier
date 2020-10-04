@@ -39,7 +39,7 @@ class CControllerDashboardWidgetRfRate extends CController {
 	}
 
 	protected function checkPermissions() {
-		return ($this->getUserType() >= USER_TYPE_ZABBIX_USER);
+		return ($this->getUserType() >= USER_TYPE_NETAFIER_USER);
 	}
 
 	protected function doAction() {

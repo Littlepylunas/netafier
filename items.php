@@ -66,8 +66,8 @@ $fields = [
 									],
 	'status' =>						[T_ZBX_INT, O_OPT, null,	IN([ITEM_STATUS_DISABLED, ITEM_STATUS_ACTIVE]), null],
 	'type' =>						[T_ZBX_INT, O_OPT, null,
-										IN([-1, ITEM_TYPE_ZABBIX, ITEM_TYPE_TRAPPER, ITEM_TYPE_SIMPLE,
-											ITEM_TYPE_INTERNAL, ITEM_TYPE_ZABBIX_ACTIVE, ITEM_TYPE_AGGREGATE,
+										IN([-1, ITEM_TYPE_NETAFIER, ITEM_TYPE_TRAPPER, ITEM_TYPE_SIMPLE,
+											ITEM_TYPE_INTERNAL, ITEM_TYPE_NETAFIER_ACTIVE, ITEM_TYPE_AGGREGATE,
 											ITEM_TYPE_EXTERNAL, ITEM_TYPE_DB_MONITOR, ITEM_TYPE_IPMI, ITEM_TYPE_SSH,
 											ITEM_TYPE_TELNET, ITEM_TYPE_JMX, ITEM_TYPE_CALCULATED, ITEM_TYPE_SNMPTRAP,
 											ITEM_TYPE_DEPENDENT, ITEM_TYPE_HTTPAGENT, ITEM_TYPE_SNMP
@@ -242,8 +242,8 @@ $fields = [
 	'filter_application' =>			[T_ZBX_STR, O_OPT, null,	null,		null],
 	'filter_name' =>				[T_ZBX_STR, O_OPT, null,	null,		null],
 	'filter_type' =>				[T_ZBX_INT, O_OPT, null,
-										IN([-1, ITEM_TYPE_ZABBIX, ITEM_TYPE_TRAPPER, ITEM_TYPE_SIMPLE,
-											ITEM_TYPE_INTERNAL, ITEM_TYPE_ZABBIX_ACTIVE, ITEM_TYPE_AGGREGATE,
+										IN([-1, ITEM_TYPE_NETAFIER, ITEM_TYPE_TRAPPER, ITEM_TYPE_SIMPLE,
+											ITEM_TYPE_INTERNAL, ITEM_TYPE_NETAFIER_ACTIVE, ITEM_TYPE_AGGREGATE,
 											ITEM_TYPE_EXTERNAL, ITEM_TYPE_DB_MONITOR, ITEM_TYPE_IPMI, ITEM_TYPE_SSH,
 											ITEM_TYPE_TELNET, ITEM_TYPE_JMX, ITEM_TYPE_CALCULATED, ITEM_TYPE_SNMPTRAP,
 											ITEM_TYPE_DEPENDENT, ITEM_TYPE_HTTPAGENT, ITEM_TYPE_SNMP
@@ -501,7 +501,7 @@ elseif (hasRequest('add') || hasRequest('update')) {
 	}
 
 	$delay = getRequest('delay', DB::getDefault('items', 'delay'));
-	$type = getRequest('type', ITEM_TYPE_ZABBIX);
+	$type = getRequest('type', ITEM_TYPE_NETAFIER);
 
 	/*
 	 * "delay_flex" is a temporary field that collects flexible and scheduling intervals separated by a semicolon.
@@ -615,7 +615,7 @@ elseif (hasRequest('add') || hasRequest('update')) {
 			$item = [
 				'hostid' => getRequest('hostid'),
 				'name' => getRequest('name', ''),
-				'type' => getRequest('type', ITEM_TYPE_ZABBIX),
+				'type' => getRequest('type', ITEM_TYPE_NETAFIER),
 				'key_' => getRequest('key', ''),
 				'interfaceid' => getRequest('interfaceid', 0),
 				'snmp_oid' => getRequest('snmp_oid', ''),
@@ -708,8 +708,8 @@ elseif (hasRequest('add') || hasRequest('update')) {
 					if ($db_item['name'] !== getRequest('name', '')) {
 						$item['name'] = getRequest('name', '');
 					}
-					if ($db_item['type'] != getRequest('type', ITEM_TYPE_ZABBIX)) {
-						$item['type'] = getRequest('type', ITEM_TYPE_ZABBIX);
+					if ($db_item['type'] != getRequest('type', ITEM_TYPE_NETAFIER)) {
+						$item['type'] = getRequest('type', ITEM_TYPE_NETAFIER);
 					}
 					if ($db_item['key_'] !== getRequest('key', '')) {
 						$item['key_'] = getRequest('key', '');
@@ -1772,8 +1772,8 @@ else {
 
 		if ($filter_delay !== '') {
 			if ($filter_type == -1 && $filter_delay == 0) {
-				$options['filter']['type'] = [ITEM_TYPE_ZABBIX, ITEM_TYPE_SIMPLE,  ITEM_TYPE_INTERNAL,
-					ITEM_TYPE_ZABBIX_ACTIVE, ITEM_TYPE_AGGREGATE, ITEM_TYPE_EXTERNAL, ITEM_TYPE_DB_MONITOR,
+				$options['filter']['type'] = [ITEM_TYPE_NETAFIER, ITEM_TYPE_SIMPLE,  ITEM_TYPE_INTERNAL,
+					ITEM_TYPE_NETAFIER_ACTIVE, ITEM_TYPE_AGGREGATE, ITEM_TYPE_EXTERNAL, ITEM_TYPE_DB_MONITOR,
 					ITEM_TYPE_IPMI, ITEM_TYPE_SSH, ITEM_TYPE_TELNET, ITEM_TYPE_CALCULATED, ITEM_TYPE_JMX
 				];
 

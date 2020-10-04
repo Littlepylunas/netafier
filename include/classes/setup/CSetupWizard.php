@@ -151,7 +151,7 @@ class CSetupWizard extends CForm {
 	}
 
 	function stage0() {
-		preg_match('/^\d+\.\d+/', ZABBIX_VERSION, $version);
+		preg_match('/^\d+\.\d+/', NETAFIER_VERSION, $version);
 		$setup_title = (new CDiv([new CSpan(_('Welcome to')), 'Zabbix '.$version[0]]))->addClass(ZBX_STYLE_SETUP_TITLE);
 
 		return (new CDiv($setup_title))->addClass(ZBX_STYLE_SETUP_RIGHT_BODY);

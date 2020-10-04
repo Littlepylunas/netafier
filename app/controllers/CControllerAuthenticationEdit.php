@@ -48,7 +48,7 @@ class CControllerAuthenticationEdit extends CController {
 			'ldap_search_attribute' =>		'db config.ldap_search_attribute',
 			'ldap_bind_password' =>			'db config.ldap_bind_password',
 			'http_auth_enabled' =>			'in '.ZBX_AUTH_HTTP_DISABLED.','.ZBX_AUTH_HTTP_ENABLED,
-			'http_login_form' =>			'in '.ZBX_AUTH_FORM_ZABBIX.','.ZBX_AUTH_FORM_HTTP,
+			'http_login_form' =>			'in '.ZBX_AUTH_FORM_NETAFIER.','.ZBX_AUTH_FORM_HTTP,
 			'http_strip_domains' =>			'db config.http_strip_domains',
 			'saml_auth_enabled' =>			'in '.ZBX_AUTH_SAML_DISABLED.','.ZBX_AUTH_SAML_ENABLED,
 			'saml_idp_entityid' =>			'db config.saml_idp_entityid',

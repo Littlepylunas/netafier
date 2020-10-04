@@ -34,7 +34,7 @@ class CControllerWidgetDiscoveryView extends CControllerWidget {
 	}
 
 	protected function doAction() {
-		if ($this->getUserType() >= USER_TYPE_ZABBIX_ADMIN) {
+		if ($this->getUserType() >= USER_TYPE_NETAFIER_ADMIN) {
 			$drules = API::DRule()->get([
 				'output' => ['druleid', 'name'],
 				'selectDHosts' => ['status'],

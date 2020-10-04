@@ -137,7 +137,7 @@ class CConfigurationExport {
 			$this->gatherData();
 
 			$schema = (new CImportValidatorFactory('xml'))
-				->getObject(ZABBIX_EXPORT_VERSION)
+				->getObject(NETAFIER_EXPORT_VERSION)
 				->getSchema();
 
 			$simple_triggers = [];

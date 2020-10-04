@@ -52,7 +52,7 @@ abstract class CControllerWidget extends CController {
 	 * @return bool
 	 */
 	protected function checkPermissions() {
-		return ($this->getUserType() >= USER_TYPE_ZABBIX_USER);
+		return ($this->getUserType() >= USER_TYPE_NETAFIER_USER);
 	}
 
 	/**

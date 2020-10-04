@@ -37,7 +37,7 @@ class CControllerNotificationsMute extends CController {
 	}
 
 	protected function checkPermissions() {
-		return (!CWebUser::isGuest() && $this->getUserType() >= USER_TYPE_ZABBIX_USER);
+		return (!CWebUser::isGuest() && $this->getUserType() >= USER_TYPE_NETAFIER_USER);
 	}
 
 	protected function doAction() {

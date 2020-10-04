@@ -920,9 +920,9 @@ ZBX_NotificationsAlarm.prototype.acceptNotification = function(notif) {
 /**
  * Registering instance.
  */
-ZABBIX.namespace('instances.notifications', new ZBX_Notifications(
-	ZABBIX.namespace('instances.localStorage'),
-	ZABBIX.namespace('instances.browserTab')
+NETAFIER.namespace('instances.notifications', new ZBX_Notifications(
+	NETAFIER.namespace('instances.localStorage'),
+	NETAFIER.namespace('instances.browserTab')
 ));
 
 /**
@@ -931,8 +931,8 @@ ZABBIX.namespace('instances.notifications', new ZBX_Notifications(
 $(function() {
 	let wrapper = document.querySelector(".wrapper"),
 		main = document.querySelector("main"),
-		ntf_node = ZABBIX.namespace('instances.notifications.collection.node'),
-		store = ZABBIX.namespace('instances.localStorage'),
+		ntf_node = NETAFIER.namespace('instances.notifications.collection.node'),
+		store = NETAFIER.namespace('instances.localStorage'),
 		ntf_pos = store.readKey('web.notifications.pos', null),
 		pos_top = 10,
 		pos_side = 10,

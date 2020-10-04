@@ -133,11 +133,11 @@ if (hasRequest('add') || hasRequest('update')) {
 			$screen['userGroups'] = getRequest('userGroups', []);
 
 			// Only administrators can set screen owner.
-			if (CWebUser::getType() == USER_TYPE_ZABBIX_USER) {
+			if (CWebUser::getType() == USER_TYPE_NETAFIER_USER) {
 				unset($screen['userid']);
 			}
 			// Screen update with inaccessible user.
-			elseif (CWebUser::getType() == USER_TYPE_ZABBIX_ADMIN && $screen['userid'] === '') {
+			elseif (CWebUser::getType() == USER_TYPE_NETAFIER_ADMIN && $screen['userid'] === '') {
 				$user_exist = API::User()->get([
 					'output' => ['userid'],
 					'userids' => [$screen['userid']]
@@ -413,7 +413,7 @@ else {
 
 		$user_type = CWebUser::getType();
 
-		if ($user_type != USER_TYPE_SUPER_ADMIN && $user_type != USER_TYPE_ZABBIX_ADMIN) {
+		if ($user_type != USER_TYPE_SUPER_ADMIN && $user_type != USER_TYPE_NETAFIER_ADMIN) {
 			$editable_screens = API::Screen()->get([
 				'output' => [],
 				'screenids' => array_keys($data['screens']),

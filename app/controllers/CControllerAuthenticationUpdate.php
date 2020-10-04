@@ -54,7 +54,7 @@ class CControllerAuthenticationUpdate extends CController {
 			'ldap_search_attribute' =>		'db config.ldap_search_attribute',
 			'ldap_bind_password' =>			'db config.ldap_bind_password',
 			'http_auth_enabled' =>			'in '.ZBX_AUTH_HTTP_DISABLED.','.ZBX_AUTH_HTTP_ENABLED,
-			'http_login_form' =>			'in '.ZBX_AUTH_FORM_ZABBIX.','.ZBX_AUTH_FORM_HTTP,
+			'http_login_form' =>			'in '.ZBX_AUTH_FORM_NETAFIER.','.ZBX_AUTH_FORM_HTTP,
 			'http_strip_domains' =>			'db config.http_strip_domains',
 			'saml_auth_enabled' =>			'in '.ZBX_AUTH_SAML_DISABLED.','.ZBX_AUTH_SAML_ENABLED,
 			'saml_idp_entityid' =>			'db config.saml_idp_entityid',
@@ -302,7 +302,7 @@ class CControllerAuthenticationUpdate extends CController {
 				}
 
 				$this->response->setMessageOk(_('Authentication settings updated'));
-				add_audit(AUDIT_ACTION_UPDATE, AUDIT_RESOURCE_ZABBIX_CONFIG, _('Authentication method changed'));
+				add_audit(AUDIT_ACTION_UPDATE, AUDIT_RESOURCE_NETAFIER_CONFIG, _('Authentication method changed'));
 			}
 			else {
 				$this->response->setFormData($this->getInputAll());

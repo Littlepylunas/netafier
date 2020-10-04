@@ -100,7 +100,7 @@
 
 		// Item type specific properties.
 		switch (+form_data['type']) {
-			case <?= ITEM_TYPE_ZABBIX ?>:
+			case <?= ITEM_TYPE_NETAFIER ?>:
 				properties = {
 					key: form_data['key'].trim()
 				};

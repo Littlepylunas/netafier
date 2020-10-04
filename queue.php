@@ -90,8 +90,8 @@ $severityConfig = select_config();
 // overview
 if ($config == QUEUE_OVERVIEW) {
 	$itemTypes = [
-		ITEM_TYPE_ZABBIX,
-		ITEM_TYPE_ZABBIX_ACTIVE,
+		ITEM_TYPE_NETAFIER,
+		ITEM_TYPE_NETAFIER_ACTIVE,
 		ITEM_TYPE_SIMPLE,
 		ITEM_TYPE_SNMP,
 		ITEM_TYPE_INTERNAL,

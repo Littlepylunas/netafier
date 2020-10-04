@@ -89,12 +89,12 @@ class CSidebar extends CBaseComponent {
 			this._is_opened = true;
 
 			if (this._view_mode === SIDEBAR_VIEW_MODE_COMPACT) {
-				ZABBIX.MenuMain.expandSelected();
+				NETAFIER.MenuMain.expandSelected();
 			}
 
 			if (this._view_mode === SIDEBAR_VIEW_MODE_HIDDEN) {
 				this.removeClass('focus-off');
-				ZABBIX.MenuMain.focusSelected();
+				NETAFIER.MenuMain.focusSelected();
 			}
 
 			if ([SIDEBAR_VIEW_MODE_COMPACT, SIDEBAR_VIEW_MODE_HIDDEN].includes(this._view_mode)) {
@@ -120,7 +120,7 @@ class CSidebar extends CBaseComponent {
 			this._is_opened = false;
 
 			if (this._view_mode === SIDEBAR_VIEW_MODE_COMPACT) {
-				ZABBIX.MenuMain.collapseAll();
+				NETAFIER.MenuMain.collapseAll();
 				this._sidebar_scrollable.scrollTop = 0;
 			}
 
@@ -239,7 +239,7 @@ class CSidebar extends CBaseComponent {
 
 			expandSelected: () => {
 				this._expand_timer = setTimeout(() => {
-					ZABBIX.MenuMain.expandSelected();
+					NETAFIER.MenuMain.expandSelected();
 				}, MENU_EXPAND_SELECTED_DELAY);
 			},
 
@@ -260,7 +260,7 @@ class CSidebar extends CBaseComponent {
 
 			viewmodechange: (e) => {
 				if (e.target.classList.contains('button-compact')) {
-					ZABBIX.MenuMain.collapseAll();
+					NETAFIER.MenuMain.collapseAll();
 					clearTimeout(this._expand_timer);
 					this.setViewMode(SIDEBAR_VIEW_MODE_COMPACT);
 				}
@@ -350,7 +350,7 @@ class CSidebar extends CBaseComponent {
 			el.addEventListener('click', this._events.viewmodechange);
 		}
 
-		ZABBIX.MenuMain.on('expand', this._events.expand);
+		NETAFIER.MenuMain.on('expand', this._events.expand);
 
 		this._events._update(this._view_mode);
 	}

@@ -96,7 +96,7 @@ class CDService extends CApiService {
 		];
 		$options = zbx_array_merge($defOptions, $options);
 
-		if (self::$userData['type'] < USER_TYPE_ZABBIX_ADMIN) {
+		if (self::$userData['type'] < USER_TYPE_NETAFIER_ADMIN) {
 			return [];
 		}
 

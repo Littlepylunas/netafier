@@ -62,14 +62,14 @@ $pageHeader
 	->addJsFile((new CUrl('js/browsers.js'))->getUrl())
 	->addJsFile((new CUrl('jsLoader.php'))
 		->setArgument('lang', $data['user']['lang'])
-		->setArgument('ver', ZABBIX_VERSION)
+		->setArgument('ver', NETAFIER_VERSION)
 		->setArgument('showGuiMessaging', $show_gui_messaging)
 		->getUrl()
 	);
 
 if ($scripts) {
 	$pageHeader->addJsFile((new CUrl('jsLoader.php'))
-		->setArgument('ver', ZABBIX_VERSION)
+		->setArgument('ver', NETAFIER_VERSION)
 		->setArgument('lang', $data['user']['lang'])
 		->setArgument('files', $scripts)
 		->getUrl()

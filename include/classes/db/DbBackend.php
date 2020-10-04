@@ -126,9 +126,9 @@ abstract class DbBackend {
 
 		$version = DBfetch(DBselect('SELECT dv.mandatory FROM dbversion dv'));
 
-		if ($version['mandatory'] != ZABBIX_DB_VERSION) {
+		if ($version['mandatory'] != NETAFIER_DB_VERSION) {
 			$this->setError(_s('The Zabbix database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator.',
-				$version['mandatory'], ZABBIX_DB_VERSION
+				$version['mandatory'], NETAFIER_DB_VERSION
 			));
 
 			return false;

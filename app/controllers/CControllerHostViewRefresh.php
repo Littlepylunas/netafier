@@ -82,7 +82,7 @@ class CControllerHostViewRefresh extends CControllerHost {
 	}
 
 	protected function checkPermissions(): bool {
-		return ($this->getUserType() >= USER_TYPE_ZABBIX_USER);
+		return ($this->getUserType() >= USER_TYPE_NETAFIER_USER);
 	}
 
 	protected function doAction(): void {

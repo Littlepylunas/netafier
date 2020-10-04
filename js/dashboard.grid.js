@@ -3324,7 +3324,7 @@
 					},
 					data_buffer: [],
 					minimalHeight: calculateGridMinHeight($this),
-					storage: ZABBIX.namespace('instances.localStorage')
+					storage: NETAFIER.namespace('instances.localStorage')
 				});
 
 				var	data = $this.data('dashboardGrid'),

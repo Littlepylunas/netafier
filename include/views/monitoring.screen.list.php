@@ -92,7 +92,7 @@ $screenTable = (new CTableInfo())
 foreach ($data['screens'] as $screen) {
 	$user_type = CWebUser::getType();
 
-	if ($data['templateid'] || $user_type == USER_TYPE_SUPER_ADMIN || $user_type == USER_TYPE_ZABBIX_ADMIN
+	if ($data['templateid'] || $user_type == USER_TYPE_SUPER_ADMIN || $user_type == USER_TYPE_NETAFIER_ADMIN
 			|| $screen['editable']) {
 		$checkbox = new CCheckBox('screens['.$screen['screenid'].']', $screen['screenid']);
 		$action = new CLink(_('Properties'), '?form=update&screenid='.$screen['screenid'].url_param('templateid'));

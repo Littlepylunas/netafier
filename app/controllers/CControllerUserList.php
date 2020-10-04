@@ -36,7 +36,7 @@ class CControllerUserList extends CController {
 			'filter_alias' =>		'string',
 			'filter_name' =>		'string',
 			'filter_surname' =>		'string',
-			'filter_type' =>		'in -1,'.USER_TYPE_ZABBIX_USER.','.USER_TYPE_ZABBIX_ADMIN.','.USER_TYPE_SUPER_ADMIN,
+			'filter_type' =>		'in -1,'.USER_TYPE_NETAFIER_USER.','.USER_TYPE_NETAFIER_ADMIN.','.USER_TYPE_SUPER_ADMIN,
 			'page' =>				'ge 1'
 		];
 

@@ -143,7 +143,7 @@ class CControllerMenuPopup extends CController {
 			$db_host = $db_hosts[0];
 			$rw_hosts = false;
 
-			if ($has_goto && CWebUser::getType() > USER_TYPE_ZABBIX_USER) {
+			if ($has_goto && CWebUser::getType() > USER_TYPE_NETAFIER_USER) {
 				$rw_hosts = (bool) API::Host()->get([
 					'output' => [],
 					'hostids' => $db_host['hostid'],
@@ -170,7 +170,7 @@ class CControllerMenuPopup extends CController {
 				$menu_data['showGraphs'] = (bool) $db_host['graphs'];
 				$menu_data['showScreens'] = (bool) $db_host['screens'];
 				$menu_data['showWeb'] = (bool) $db_host['httpTests'];
-				$menu_data['showConfig'] = (CWebUser::getType() > USER_TYPE_ZABBIX_USER);
+				$menu_data['showConfig'] = (CWebUser::getType() > USER_TYPE_NETAFIER_USER);
 				$menu_data['isWriteable'] = $rw_hosts;
 				$menu_data['showTriggers'] = ($db_host['status'] == HOST_STATUS_MONITORED);
 				if (array_key_exists('severity_min', $data)) {
@@ -572,7 +572,7 @@ class CControllerMenuPopup extends CController {
 				'triggerid' => $data['triggerid'],
 				'items' => $items,
 				'showEvents' => $show_events,
-				'configuration' => in_array(CWebUser::$data['type'], [USER_TYPE_ZABBIX_ADMIN, USER_TYPE_SUPER_ADMIN])
+				'configuration' => in_array(CWebUser::$data['type'], [USER_TYPE_NETAFIER_ADMIN, USER_TYPE_SUPER_ADMIN])
 			];
 
 			if ($db_trigger['url'] !== '') {

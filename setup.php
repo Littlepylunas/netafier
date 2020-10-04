@@ -108,7 +108,7 @@ if (!CWebUser::$data) {
 	->addCssFile('assets/styles/'.CHtml::encode($theme).'.css')
 	->addJsFile((new CUrl('js/browsers.js'))->getUrl())
 	->addJsFile((new CUrl('jsLoader.php'))
-		->setArgument('ver', ZABBIX_VERSION)
+		->setArgument('ver', NETAFIER_VERSION)
 		->setArgument('lang', CWebUser::$data['lang'])
 		->getUrl()
 	)

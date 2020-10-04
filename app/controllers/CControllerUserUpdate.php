@@ -45,7 +45,7 @@ class CControllerUserUpdate extends CControllerUserUpdateGeneral {
 			'refresh' =>		'db users.refresh|not_empty',
 			'rows_per_page' =>	'db users.rows_per_page',
 			'url' =>			'db users.url',
-			'type' =>			'db users.type|in '.USER_TYPE_ZABBIX_USER.','.USER_TYPE_ZABBIX_ADMIN.','.USER_TYPE_SUPER_ADMIN,
+			'type' =>			'db users.type|in '.USER_TYPE_NETAFIER_USER.','.USER_TYPE_NETAFIER_ADMIN.','.USER_TYPE_SUPER_ADMIN,
 			'form_refresh' =>	'int32'
 		];
 

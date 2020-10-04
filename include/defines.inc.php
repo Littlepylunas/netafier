@@ -18,13 +18,13 @@
 ** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 **/
 
-define('ZABBIX_VERSION',		'5.0.2');
-define('ZABBIX_API_VERSION',	'5.0.2');
-define('ZABBIX_EXPORT_VERSION',	'5.0');
-define('ZABBIX_DB_VERSION',		5000000);
+define('NETAFIER_VERSION',		'5.0.2');
+define('NETAFIER_API_VERSION',	'5.0.2');
+define('NETAFIER_EXPORT_VERSION',	'5.0');
+define('NETAFIER_DB_VERSION',		5000000);
 
-define('ZABBIX_COPYRIGHT_FROM',	'2001');
-define('ZABBIX_COPYRIGHT_TO',	'2020');
+define('NETAFIER_COPYRIGHT_FROM',	'2001');
+define('NETAFIER_COPYRIGHT_TO',	'2020');
 
 define('ZBX_LOGIN_ATTEMPTS',	5);
 define('ZBX_LOGIN_BLOCK',		30); // sec
@@ -129,7 +129,7 @@ define('ZBX_AUTH_LDAP_DISABLED',	0);
 define('ZBX_AUTH_LDAP_ENABLED',		1);
 define('ZBX_AUTH_SAML_DISABLED',	0);
 define('ZBX_AUTH_SAML_ENABLED',		1);
-define('ZBX_AUTH_FORM_ZABBIX',	0);
+define('ZBX_AUTH_FORM_NETAFIER',	0);
 define('ZBX_AUTH_FORM_HTTP',	1);
 define('ZBX_AUTH_CASE_INSENSITIVE',	0);
 define('ZBX_AUTH_CASE_SENSITIVE',	1);
@@ -223,7 +223,7 @@ define('AUDIT_ACTION_DISABLE',	6);
 define('AUDIT_ACTION_EXECUTE',	7);
 
 define('AUDIT_RESOURCE_USER',				0);
-define('AUDIT_RESOURCE_ZABBIX_CONFIG',		2);
+define('AUDIT_RESOURCE_NETAFIER_CONFIG',		2);
 define('AUDIT_RESOURCE_MEDIA_TYPE',			3);
 define('AUDIT_RESOURCE_HOST',				4);
 define('AUDIT_RESOURCE_ACTION',				5);
@@ -471,14 +471,14 @@ define('ZBX_ITEM_DELAY_DEFAULT',			'1m');
 define('ZBX_ITEM_FLEXIBLE_DELAY_DEFAULT',	'50s');
 define('ZBX_ITEM_SCHEDULING_DEFAULT',		'wd1-5h9-18');
 
-define('ITEM_TYPE_ZABBIX',			0);
+define('ITEM_TYPE_NETAFIER',			0);
 define('ITEM_TYPE_SNMPV1',			1); // Deprecated. Now only used in XML converters. Use ITEM_TYPE_SNMP instead.
 define('ITEM_TYPE_TRAPPER',			2);
 define('ITEM_TYPE_SIMPLE',			3);
 define('ITEM_TYPE_SNMPV2C',			4); // Deprecated. Now only used in XML converters. Use ITEM_TYPE_SNMP instead.
 define('ITEM_TYPE_INTERNAL',		5);
 define('ITEM_TYPE_SNMPV3',			6); // Deprecated. Now only used in XML converters. Use ITEM_TYPE_SNMP instead.
-define('ITEM_TYPE_ZABBIX_ACTIVE',	7);
+define('ITEM_TYPE_NETAFIER_ACTIVE',	7);
 define('ITEM_TYPE_AGGREGATE',		8);
 define('ITEM_TYPE_HTTPTEST',		9);
 define('ITEM_TYPE_EXTERNAL',		10);
@@ -861,8 +861,8 @@ define('ZBX_DISCOVERY_DNS',		1);
 define('ZBX_DISCOVERY_IP',		2);
 define('ZBX_DISCOVERY_VALUE',	3);
 
-define('USER_TYPE_ZABBIX_USER',		1);
-define('USER_TYPE_ZABBIX_ADMIN',	2);
+define('USER_TYPE_NETAFIER_USER',		1);
+define('USER_TYPE_NETAFIER_ADMIN',	2);
 define('USER_TYPE_SUPER_ADMIN',		3);
 
 define('ZBX_NOT_INTERNAL_GROUP',	0);
@@ -1834,9 +1834,9 @@ define('ZBX_STYLE_YELLOW', 'yellow');
 define('ZBX_STYLE_FIELD_LABEL_ASTERISK', 'form-label-asterisk');
 define('ZBX_STYLE_PROBLEM_ICON_LIST' , 'problem-icon-list');
 define('ZBX_STYLE_PROBLEM_ICON_LIST_ITEM' , 'problem-icon-list-item');
-define('ZBX_STYLE_ZABBIX_LOGO', 'zabbix-logo');
-define('ZBX_STYLE_ZABBIX_SIDEBAR_LOGO', 'zabbix-sidebar-logo');
-define('ZBX_STYLE_ZABBIX_SIDEBAR_LOGO_COMPACT', 'zabbix-sidebar-logo-compact');
+define('ZBX_STYLE_NETAFIER_LOGO', 'zabbix-logo');
+define('ZBX_STYLE_NETAFIER_SIDEBAR_LOGO', 'zabbix-sidebar-logo');
+define('ZBX_STYLE_NETAFIER_SIDEBAR_LOGO_COMPACT', 'zabbix-sidebar-logo-compact');
 
 // HTML column layout.
 define('ZBX_STYLE_COLUMNS', 'columns-wrapper');

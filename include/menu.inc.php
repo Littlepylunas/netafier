@@ -79,7 +79,7 @@ function getMainMenu(): CMenu {
 			]))
 	]);
 
-	if (CWebUser::getType() >= USER_TYPE_ZABBIX_ADMIN) {
+	if (CWebUser::getType() >= USER_TYPE_NETAFIER_ADMIN) {
 		$menu
 			->find(_('Monitoring'))
 			->getSubMenu()
@@ -243,7 +243,7 @@ function getUserMenu(): CMenu {
 			->setIcon('icon-signout')
 			->setUrl(new CUrl('#signout'))
 			->setTitle(_('Sign out'))
-			->onClick('ZABBIX.logout()')
+			->onClick('NETAFIER.logout()')
 	);
 
 	return $menu;

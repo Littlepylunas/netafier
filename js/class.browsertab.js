@@ -171,6 +171,6 @@ ZBX_BrowserTab.prototype.pushLastseen = function() {
 	this.store.writeKey('tabs.lastseen', this.lastseen);
 };
 
-ZABBIX.namespace('instances.browserTab', new ZBX_BrowserTab(
-	ZABBIX.namespace('instances.localStorage')
+NETAFIER.namespace('instances.browserTab', new ZBX_BrowserTab(
+	NETAFIER.namespace('instances.localStorage')
 ));

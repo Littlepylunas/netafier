@@ -51,7 +51,7 @@ class CLegacyAction extends CAction {
 		$user_type = $this->getUserType();
 		$denied = [];
 
-		if ($user_type < USER_TYPE_ZABBIX_USER) {
+		if ($user_type < USER_TYPE_NETAFIER_USER) {
 			$denied = ['chart.php', 'chart2.php', 'chart3.php', 'chart5.php', 'chart6.php', 'chart7.php', 'history.php',
 				'hostinventories.php', 'hostinventoriesoverview.php', 'httpdetails.php', 'image.php', 'imgstore.php',
 				'jsrpc.php', 'map.import.php', 'map.php', 'overview.php', 'toptriggers.php', 'tr_events.php',
@@ -60,7 +60,7 @@ class CLegacyAction extends CAction {
 			];
 		}
 
-		if ($user_type < USER_TYPE_ZABBIX_ADMIN) {
+		if ($user_type < USER_TYPE_NETAFIER_ADMIN) {
 			$denied = array_merge($denied, ['actionconf.php', 'applications.php', 'conf.import.php',
 				'disc_prototypes.php', 'discoveryconf.php', 'graphs.php', 'host_discovery.php', 'host_prototypes.php',
 				'hostgroups.php', 'hosts.php', 'httpconf.php', 'items.php', 'maintenance.php', 'report4.php',

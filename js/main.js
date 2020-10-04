@@ -897,10 +897,10 @@ window.addEventListener('load', e => {
 	const sidebar = document.querySelector('.sidebar');
 
 	if (sidebar !== null) {
-		ZABBIX.MenuMain = new CMenu(document.querySelector('.menu-main'));
-		ZABBIX.UserMain = new CMenu(document.querySelector('.menu-user'));
+		NETAFIER.MenuMain = new CMenu(document.querySelector('.menu-main'));
+		NETAFIER.UserMain = new CMenu(document.querySelector('.menu-user'));
 
-		ZABBIX.Sidebar = new CSidebar(sidebar)
+		NETAFIER.Sidebar = new CSidebar(sidebar)
 			.on('viewmodechange', (e) => {
 				updateUserProfile('web.sidebar.mode', e.detail.view_mode, []);
 				window.dispatchEvent(new Event('resize'));

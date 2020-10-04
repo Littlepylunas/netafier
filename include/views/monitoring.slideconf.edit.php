@@ -56,7 +56,7 @@ $multiselect_data = [
 	'name' => 'userid',
 	'object_name' => 'users',
 	'multiple' => false,
-	'disabled' => ($user_type != USER_TYPE_SUPER_ADMIN && $user_type != USER_TYPE_ZABBIX_ADMIN),
+	'disabled' => ($user_type != USER_TYPE_SUPER_ADMIN && $user_type != USER_TYPE_NETAFIER_ADMIN),
 	'data' => [],
 	'popup' => [
 		'parameters' => [

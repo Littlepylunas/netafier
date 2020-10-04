@@ -168,7 +168,7 @@ class CConfiguration extends CApiService {
 
 		// Get schema for converters.
 		$schema = $importValidatorFactory
-			->getObject(ZABBIX_EXPORT_VERSION)
+			->getObject(NETAFIER_EXPORT_VERSION)
 			->getSchema();
 
 		// Convert human readable import constants to values Zabbix API can work with.

@@ -171,7 +171,7 @@ class CWidget {
 		// 		->setIcon('icon-signout')
 		// 		->setUrl(new CUrl('#signout'))
 		// 		->setTitle(_('Sign out'))
-		// 		->onClick('ZABBIX.logout()');
+		// 		->onClick('NETAFIER.logout()');
 
 		if ($this->controls !== null) {
 			$divs[] = (new CDiv($this->controls))->addClass(ZBX_STYLE_HEADER_CONTROLS);

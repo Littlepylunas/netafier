@@ -877,7 +877,7 @@ function getFontComboBox($name) {
 			jQuery('#application').val(data.values[0].name);
 		}
 		else if (data.object === 'linktrigger') {
-			ZABBIX.apps.map.object.linkForm.addNewTriggers(data.values);
+			NETAFIER.apps.map.object.linkForm.addNewTriggers(data.values);
 		}
 	}
 </script>

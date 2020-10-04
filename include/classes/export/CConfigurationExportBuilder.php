@@ -30,7 +30,7 @@ class CConfigurationExportBuilder {
 	 * @param $version  current export version
 	 */
 	public function __construct() {
-		$this->data['version'] = ZABBIX_EXPORT_VERSION;
+		$this->data['version'] = NETAFIER_EXPORT_VERSION;
 		$this->data['date'] = date(DATE_TIME_FORMAT_SECONDS_XML, time() - date('Z'));
 	}
 

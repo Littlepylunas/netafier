@@ -58,7 +58,7 @@ class CControllerActionOperationGet extends CController {
 	}
 
 	protected function checkPermissions() {
-		if ($this->getUserType() >= USER_TYPE_ZABBIX_ADMIN) {
+		if ($this->getUserType() >= USER_TYPE_NETAFIER_ADMIN) {
 			if (!$this->getInput('actionid', '0')) {
 				return true;
 			}
