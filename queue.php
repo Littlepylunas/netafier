@@ -46,7 +46,7 @@ $config = getRequest('config', CProfile::get('web.queue.config', 0));
 CProfile::update('web.queue.config', $config, PROFILE_TYPE_INT);
 
 // fetch data
-$zabbixServer = new CZabbixServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+$zabbixServer = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 $queueRequests = [
 	QUEUE_OVERVIEW => CZabbixServer::QUEUE_OVERVIEW,
 	QUEUE_OVERVIEW_BY_PROXY => CZabbixServer::QUEUE_OVERVIEW_BY_PROXY,

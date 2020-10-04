@@ -112,12 +112,12 @@ switch ($page['type']) {
 }
 
 if ($page['type'] == PAGE_TYPE_HTML) {
-	global $ZBX_SERVER_NAME;
+	global $NFR_SERVER_NAME;
 
 	// page title
 	$pageTitle = '';
-	if (isset($ZBX_SERVER_NAME) && $ZBX_SERVER_NAME !== '') {
-		$pageTitle = $ZBX_SERVER_NAME.NAME_DELIMITER;
+	if (isset($NFR_SERVER_NAME) && $NFR_SERVER_NAME !== '') {
+		$pageTitle = $NFR_SERVER_NAME.NAME_DELIMITER;
 	}
 	$pageTitle .= isset($page['title']) ? $page['title'] : _('Zabbix');
 
@@ -140,7 +140,7 @@ if ($page['type'] == PAGE_TYPE_HTML) {
 			$pageHeader->addStyle(getTriggerStatusCss($config));
 
 			// perform Zabbix server check only for standard pages
-			if ($is_standard_page && $config['server_check_interval'] && !empty($ZBX_SERVER) && !empty($ZBX_SERVER_PORT)) {
+			if ($is_standard_page && $config['server_check_interval'] && !empty($NFR_SERVER) && !empty($NFR_SERVER_PORT)) {
 				$page['scripts'][] = 'servercheck.js';
 			}
 		}
@@ -190,7 +190,7 @@ if ($page['type'] != PAGE_TYPE_HTML || defined('ZBX_PAGE_NO_HEADER')) {
 
 if (!defined('ZBX_PAGE_NO_MENU') && $page['web_layout_mode'] == ZBX_LAYOUT_NORMAL) {
 	echo (new CPartial('layout.htmlpage.aside', [
-		'server_name' => isset($ZBX_SERVER_NAME) ? $ZBX_SERVER_NAME : ''
+		'server_name' => isset($NFR_SERVER_NAME) ? $NFR_SERVER_NAME : ''
 	]))->getOutput();
 }
 

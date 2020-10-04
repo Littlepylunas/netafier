@@ -50,12 +50,12 @@ $saml_login_link = $data['saml_login_url']
 		->addClass(ZBX_STYLE_SIGN_IN_TXT)
 	: null;
 
-global $ZBX_SERVER_NAME;
+global $NFR_SERVER_NAME;
 
 (new CDiv([
 	(new CTag('main', true, [
-		(isset($ZBX_SERVER_NAME) && $ZBX_SERVER_NAME !== '')
-			? (new CDiv($ZBX_SERVER_NAME))->addClass(ZBX_STYLE_SERVER_NAME)
+		(isset($NFR_SERVER_NAME) && $NFR_SERVER_NAME !== '')
+			? (new CDiv($NFR_SERVER_NAME))->addClass(ZBX_STYLE_SERVER_NAME)
 			: null,
 		(new CDiv([
 			(new CDiv(makeLogo(LOGO_TYPE_NORMAL)))->addClass(ZBX_STYLE_SIGNIN_LOGO),

@@ -61,7 +61,7 @@ catch (Exception $e) {
 
 CProfiler::getInstance()->start();
 
-global $ZBX_SERVER, $ZBX_SERVER_PORT, $page;
+global $NFR_SERVER, $NFR_SERVER_PORT, $page;
 
 $page = [
 	'title' => null,

@@ -325,18 +325,18 @@ class CSetupWizard extends CForm {
 		$table = new CFormList();
 
 		$table->addRow(_('Host'),
-			(new CTextBox('zbx_server', $this->getConfig('ZBX_SERVER', 'localhost')))
+			(new CTextBox('zbx_server', $this->getConfig('NFR_SERVER', 'localhost')))
 				->setWidth(ZBX_TEXTAREA_SMALL_WIDTH)
 		);
 
 		$table->addRow(_('Port'),
-			(new CNumericBox('zbx_server_port', $this->getConfig('ZBX_SERVER_PORT', '10051'), 5, false, false, false))
+			(new CNumericBox('zbx_server_port', $this->getConfig('NFR_SERVER_PORT', '10051'), 5, false, false, false))
 				->removeAttribute('style')
 				->setWidth(ZBX_TEXTAREA_SMALL_WIDTH)
 		);
 
 		$table->addRow('Name',
-			(new CTextBox('zbx_server_name', $this->getConfig('ZBX_SERVER_NAME', '')))
+			(new CTextBox('zbx_server_name', $this->getConfig('NFR_SERVER_NAME', '')))
 				->setWidth(ZBX_TEXTAREA_SMALL_WIDTH)
 		);
 
@@ -387,9 +387,9 @@ class CSetupWizard extends CForm {
 
 		$table->addRow(null, null);
 
-		$table->addRow((new CSpan(_('Zabbix server')))->addClass(ZBX_STYLE_GREY), $this->getConfig('ZBX_SERVER'));
-		$table->addRow((new CSpan(_('Zabbix server port')))->addClass(ZBX_STYLE_GREY), $this->getConfig('ZBX_SERVER_PORT'));
-		$table->addRow((new CSpan(_('Zabbix server name')))->addClass(ZBX_STYLE_GREY), $this->getConfig('ZBX_SERVER_NAME'));
+		$table->addRow((new CSpan(_('Zabbix server')))->addClass(ZBX_STYLE_GREY), $this->getConfig('NFR_SERVER'));
+		$table->addRow((new CSpan(_('Zabbix server port')))->addClass(ZBX_STYLE_GREY), $this->getConfig('NFR_SERVER_PORT'));
+		$table->addRow((new CSpan(_('Zabbix server name')))->addClass(ZBX_STYLE_GREY), $this->getConfig('NFR_SERVER_NAME'));
 
 		return [
 			new CTag('h1', true, _('Pre-installation summary')),
@@ -422,9 +422,9 @@ class CSetupWizard extends CForm {
 				'CIPHER_LIST' => $this->getConfig('DB_CIPHER_LIST'),
 				'DOUBLE_IEEE754' => $this->getConfig('DB_DOUBLE_IEEE754')
 			],
-			'ZBX_SERVER' => $this->getConfig('ZBX_SERVER'),
-			'ZBX_SERVER_PORT' => $this->getConfig('ZBX_SERVER_PORT'),
-			'ZBX_SERVER_NAME' => $this->getConfig('ZBX_SERVER_NAME')
+			'NFR_SERVER' => $this->getConfig('NFR_SERVER'),
+			'NFR_SERVER_PORT' => $this->getConfig('NFR_SERVER_PORT'),
+			'NFR_SERVER_NAME' => $this->getConfig('NFR_SERVER_NAME')
 		];
 
 		$error = false;
@@ -608,9 +608,9 @@ class CSetupWizard extends CForm {
 			}
 		}
 		elseif ($this->getStep() == 3) {
-			$this->setConfig('ZBX_SERVER', getRequest('zbx_server', $this->getConfig('ZBX_SERVER', 'localhost')));
-			$this->setConfig('ZBX_SERVER_PORT', getRequest('zbx_server_port', $this->getConfig('ZBX_SERVER_PORT', '10051')));
-			$this->setConfig('ZBX_SERVER_NAME', getRequest('zbx_server_name', $this->getConfig('ZBX_SERVER_NAME', '')));
+			$this->setConfig('NFR_SERVER', getRequest('zbx_server', $this->getConfig('NFR_SERVER', 'localhost')));
+			$this->setConfig('NFR_SERVER_PORT', getRequest('zbx_server_port', $this->getConfig('NFR_SERVER_PORT', '10051')));
+			$this->setConfig('NFR_SERVER_NAME', getRequest('zbx_server_name', $this->getConfig('NFR_SERVER_NAME', '')));
 
 			if (hasRequest('next') && array_key_exists(3, getRequest('next'))) {
 				$this->doNext();
@@ -644,9 +644,9 @@ class CSetupWizard extends CForm {
 						'CIPHER_LIST' => $this->getConfig('DB_CIPHER_LIST'),
 						'DOUBLE_IEEE754' => $this->getConfig('DB_DOUBLE_IEEE754')
 					],
-					'ZBX_SERVER' => $this->getConfig('ZBX_SERVER'),
-					'ZBX_SERVER_PORT' => $this->getConfig('ZBX_SERVER_PORT'),
-					'ZBX_SERVER_NAME' => $this->getConfig('ZBX_SERVER_NAME')
+					'NFR_SERVER' => $this->getConfig('NFR_SERVER'),
+					'NFR_SERVER_PORT' => $this->getConfig('NFR_SERVER_PORT'),
+					'NFR_SERVER_NAME' => $this->getConfig('NFR_SERVER_NAME')
 				];
 				die($config->getString());
 			}

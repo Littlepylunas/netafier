@@ -68,11 +68,11 @@ function local_showHeader(array $data): void {
 }
 
 function local_showSidebar(array $data): void {
-	global $ZBX_SERVER_NAME;
+	global $NFR_SERVER_NAME;
 
 	if ($data['web_layout_mode'] == ZBX_LAYOUT_NORMAL) {
 		echo (new CPartial('layout.htmlpage.aside', [
-			'server_name' => isset($ZBX_SERVER_NAME) ? $ZBX_SERVER_NAME : ''
+			'server_name' => isset($NFR_SERVER_NAME) ? $NFR_SERVER_NAME : ''
 		]))->getOutput();
 	}
 }

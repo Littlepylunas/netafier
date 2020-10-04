@@ -23,11 +23,11 @@
  * @var CPartial $this
  */
 
-global $DB, $ZBX_SERVER, $ZBX_SERVER_NAME, $ZBX_SERVER_PORT;
+global $DB, $NFR_SERVER, $NFR_SERVER_NAME, $NFR_SERVER_PORT;
 
 $page_title = $data['page']['title'];
-if (isset($ZBX_SERVER_NAME) && $ZBX_SERVER_NAME !== '') {
-	$page_title = $ZBX_SERVER_NAME.NAME_DELIMITER.$page_title;
+if (isset($NFR_SERVER_NAME) && $NFR_SERVER_NAME !== '') {
+	$page_title = $NFR_SERVER_NAME.NAME_DELIMITER.$page_title;
 }
 
 $pageHeader = new CPageHeader($page_title);
@@ -43,7 +43,7 @@ if (!empty($DB['DB'])) {
 	$pageHeader->addStyle(getTriggerStatusCss($config));
 
 	// perform Zabbix server check only for standard pages
-	if ($config['server_check_interval'] && !empty($ZBX_SERVER) && !empty($ZBX_SERVER_PORT)) {
+	if ($config['server_check_interval'] && !empty($NFR_SERVER) && !empty($NFR_SERVER_PORT)) {
 		$scripts[] = 'servercheck.js';
 	}
 }

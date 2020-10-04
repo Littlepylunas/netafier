@@ -2015,21 +2015,21 @@ function parse_period($str) {
 }
 
 function get_status() {
-	global $ZBX_SERVER, $ZBX_SERVER_PORT;
+	global $NFR_SERVER, $NFR_SERVER_PORT;
 
 	$status = [
 		'is_running' => false,
 		'has_status' => false
 	];
 
-	$server = new CZabbixServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+	$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 	$status['is_running'] = $server->isRunning(get_cookie(ZBX_SESSION_NAME));
 
 	if ($status['is_running'] === false) {
 		return $status;
 	}
 
-	$server = new CZabbixServer($ZBX_SERVER, $ZBX_SERVER_PORT, 15, ZBX_SOCKET_BYTES_LIMIT);
+	$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, 15, ZBX_SOCKET_BYTES_LIMIT);
 	$server_status = $server->getStatus(get_cookie(ZBX_SESSION_NAME));
 	$status['has_status'] = (bool) $server_status;
 

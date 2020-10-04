@@ -604,7 +604,7 @@ class CScript extends CApiService {
 	 * @return array
 	 */
 	public function execute(array $data) {
-		global $ZBX_SERVER, $ZBX_SERVER_PORT;
+		global $NFR_SERVER, $NFR_SERVER_PORT;
 
 		$api_input_rules = ['type' => API_OBJECT, 'fields' => [
 			'hostid' =>		['type' => API_ID, 'flags' => API_REQUIRED],
@@ -632,7 +632,7 @@ class CScript extends CApiService {
 		}
 
 		// execute script
-		$zabbix_server = new CZabbixServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SCRIPT_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+		$zabbix_server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SCRIPT_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 		$result = $zabbix_server->executeScript($data['scriptid'], $data['hostid'], self::$userData['sessionid']);
 
 		if ($result !== false) {

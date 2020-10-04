@@ -605,9 +605,9 @@ function getSeverityTableCell($severity, array $data, array $stat, $is_total = f
 
 function make_status_of_zbx() {
 	if (CWebUser::getType() == USER_TYPE_SUPER_ADMIN) {
-		global $ZBX_SERVER, $ZBX_SERVER_PORT;
+		global $NFR_SERVER, $NFR_SERVER_PORT;
 
-		$server_details = $ZBX_SERVER.':'.$ZBX_SERVER_PORT;
+		$server_details = $NFR_SERVER.':'.$NFR_SERVER_PORT;
 	}
 	else {
 		$server_details = '';
