@@ -81,7 +81,7 @@ class CBrandHelper {
 	 * @return string
 	 */
 	public static function getHelpUrl() {
-		return self::getValue('BRAND_HELP_URL', 'https://www.zabbix.com/documentation/'.
+		return self::getValue('BRAND_HELP_URL', 'https://www.netafier.com/documentation/'.
 			(preg_match('/^\d+\.\d+/', NETAFIER_VERSION, $version) ? $version[0].'/' : '')
 		);
 	}

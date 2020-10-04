@@ -117,7 +117,7 @@ if (!CWebUser::$data) {
 /*
  * Displaying
  */
-$link = (new CLink('GPL v2', 'https://www.zabbix.com/license'))
+$link = (new CLink('GPL v2', 'https://www.netafier.com/license'))
 	->setTarget('_blank')
 	->addClass(ZBX_STYLE_GREY)
 	->addClass(ZBX_STYLE_LINK_ALT);

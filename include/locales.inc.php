@@ -89,12 +89,12 @@ function getLocales() {
  */
 function getSupportUrl($language = null) {
 	$urls = [
-		'ja' => 'https://www.zabbix.com/jp/support',
-		'ru' => 'https://www.zabbix.com/ru/support',
-		'zh' => 'https://www.zabbix.com/cn/support'
+		'ja' => 'https://www.netafier.com/jp/support',
+		'ru' => 'https://www.netafier.com/ru/support',
+		'zh' => 'https://www.netafier.com/cn/support'
 	];
 
-	return array_key_exists($language, $urls) ? $urls[$language] : 'https://www.zabbix.com/support';
+	return array_key_exists($language, $urls) ? $urls[$language] : 'https://www.netafier.com/support';
 }
 
 /**
