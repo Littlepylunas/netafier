@@ -119,7 +119,7 @@ if ($page['type'] == PAGE_TYPE_HTML) {
 	if (isset($NFR_SERVER_NAME) && $NFR_SERVER_NAME !== '') {
 		$pageTitle = $NFR_SERVER_NAME.NAME_DELIMITER;
 	}
-	$pageTitle .= isset($page['title']) ? $page['title'] : _('Zabbix');
+	$pageTitle .= isset($page['title']) ? $page['title'] : _('Netafier');
 
 	if ((defined('ZBX_PAGE_DO_REFRESH') || defined('ZBX_PAGE_DO_JS_REFRESH')) && CWebUser::getRefresh() != 0) {
 		$pageTitle .= ' ['._s('refreshed every %1$s sec.', CWebUser::getRefresh()).']';

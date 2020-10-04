@@ -980,7 +980,7 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix[host,discovery,interfaces]',
-					'description' => _('Returns a JSON array describing the host network interfaces configured in Zabbix. Can be used for LLD.')
+					'description' => _('Returns a JSON array describing the host network interfaces configured in Netafier. Can be used for LLD.')
 				],
 				[
 					'key' => 'zabbix[host,<type>,available]',

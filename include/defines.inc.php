@@ -897,7 +897,7 @@ define('PERM_NONE',			-1);
 define('PARAM_TYPE_TIME',		0);
 define('PARAM_TYPE_COUNTS',		1);
 
-define('ZBX_DEFAULT_AGENT', 'Zabbix');
+define('ZBX_DEFAULT_AGENT', 'Netafier');
 define('ZBX_AGENT_OTHER', -1);
 
 define('HTTPTEST_AUTH_NONE',		0);

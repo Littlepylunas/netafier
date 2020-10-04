@@ -870,7 +870,7 @@ class C50XmlValidator {
 							]],
 							'delay' =>					['type' => XML_STRING, 'default' => '1m'],
 							'attempts' =>				['type' => XML_STRING, 'default' => '1'],
-							'agent' =>					['type' => XML_STRING, 'default' => 'Zabbix'],
+							'agent' =>					['type' => XML_STRING, 'default' => 'Netafier'],
 							'http_proxy' =>				['type' => XML_STRING, 'default' => ''],
 							'variables' =>				['type' => XML_INDEXED_ARRAY, 'prefix' => 'variable', 'rules' => [
 								'variable' =>				['type' => XML_ARRAY, 'rules' => [
@@ -1477,7 +1477,7 @@ class C50XmlValidator {
 							]],
 							'delay' =>					['type' => XML_STRING, 'default' => '1m'],
 							'attempts' =>				['type' => XML_STRING, 'default' => '1'],
-							'agent' =>					['type' => XML_STRING, 'default' => 'Zabbix'],
+							'agent' =>					['type' => XML_STRING, 'default' => 'Netafier'],
 							'http_proxy' =>				['type' => XML_STRING, 'default' => ''],
 							'variables' =>				['type' => XML_INDEXED_ARRAY, 'prefix' => 'variable', 'rules' => [
 								'variable' =>				['type' => XML_ARRAY, 'rules' => [
