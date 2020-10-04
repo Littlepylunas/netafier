@@ -990,7 +990,7 @@ class CUser extends CApiService {
 
 			if ($db_user['alias'] == ZBX_GUEST_USER) {
 				self::exception(ZBX_API_ERROR_PARAMETERS,
-					_s('Cannot delete Zabbix internal user "%1$s", try disabling that user.', ZBX_GUEST_USER)
+					_s('Cannot delete Netafier internal user "%1$s", try disabling that user.', ZBX_GUEST_USER)
 				);
 			}
 		}

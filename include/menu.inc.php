@@ -197,14 +197,14 @@ function getUserMenu(): CMenu {
 	// 			(new CMenuItem(_('Support')))
 	// 				->setIcon('icon-support')
 	// 				->setUrl(new CUrl(getSupportUrl(CWebUser::getLang())))
-	// 				->setTitle(_('Zabbix Technical Support'))
+	// 				->setTitle(_('Netafier Technical Support'))
 	// 				->setTarget('_blank')
 	// 		)
 	// 		->add(
 	// 			(new CMenuItem(_('Share')))
 	// 				->setIcon('icon-share')
 	// 				->setUrl(new Curl('https://share.zabbix.com/'))
-	// 				->setTitle(_('Zabbix Share'))
+	// 				->setTitle(_('Netafier Share'))
 	// 				->setTarget('_blank')
 	// 		);
 	// }

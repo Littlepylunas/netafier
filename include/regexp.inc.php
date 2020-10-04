@@ -148,7 +148,7 @@ function validateRegexp($expressions) {
 }
 
 /**
- * Rewrite Zabbix regexp expressions.
+ * Rewrite Netafier regexp expressions.
  * If all fields are equal to existing expression, that expression is not touched.
  * Other expressions are removed and new ones created.
  *

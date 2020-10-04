@@ -181,7 +181,7 @@ class CControllerPopupItemTestGetValue extends CControllerPopupItemTest {
 			]
 		];
 
-		// Send test to be executed on Zabbix server.
+		// Send test to be executed on Netafier server.
 		$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 		$result = $server->testItem($data, CWebUser::getSessionCookie());
 

@@ -41,7 +41,7 @@ $scripts = [$field_groupids->getPostJS()];
 $form_list->addRow(
 	CWidgetHelper::getLabel($fields['interface_type']),
 	CWidgetHelper::getCheckBoxList($fields['interface_type'], [
-		INTERFACE_TYPE_AGENT => _('Zabbix agent'),
+		INTERFACE_TYPE_AGENT => _('Netafier agent'),
 		INTERFACE_TYPE_SNMP => _('SNMP'),
 		INTERFACE_TYPE_JMX => _('JMX'),
 		INTERFACE_TYPE_IPMI => _('IPMI')

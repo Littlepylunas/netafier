@@ -20,7 +20,7 @@
 
 
 /**
- * Validate import data from Zabbix 4.0.x.
+ * Validate import data from Netafier 4.0.x.
  */
 class C40XmlValidator {
 

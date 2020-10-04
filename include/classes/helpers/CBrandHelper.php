@@ -20,7 +20,7 @@
 
 
 /**
- * A class for Zabbix re-branding.
+ * A class for Netafier re-branding.
  */
 class CBrandHelper {
 

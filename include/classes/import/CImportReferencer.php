@@ -20,7 +20,7 @@
 
 
 /**
- * Class that handles associations for zabbix elements unique fields and their database ids.
+ * Class that handles associations for netafierelements unique fields and their database ids.
  * The purpose is to gather all elements that need ids from database and resolve them with one query.
  */
 class CImportReferencer {

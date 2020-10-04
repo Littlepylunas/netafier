@@ -993,7 +993,7 @@ function isTemplate($hostId) {
  *           'template' => array(                   <- optional
  *               'value' => 'template-level value'
  *               'templateid' => 10001,
- *               'name' => 'Template OS Linux by Zabbix agent'
+ *               'name' => 'Template OS Linux by Netafier agent'
  *           ),
  *           'global' => array(                     <- optional
  *               'value' => 'global-level value'
@@ -1241,7 +1241,7 @@ function getInheritedMacros(array $hostids, ?int $parent_hostid = null): array {
  *           'template' => array(                   <- optional
  *               'value' => 'template-level value'
  *               'templateid' => 10001,
- *               'name' => 'Template OS Linux by Zabbix agent'
+ *               'name' => 'Template OS Linux by Netafier agent'
  *           ),
  *           'global' => array(                     <- optional
  *               'value' => 'global-level value'

@@ -212,9 +212,9 @@ $form_list->addRow((new CLabel(_('Script name'), 'operation_opcommand_script'))-
  */
 $form_list->addRow((new CLabel(_('Execute on'), 'operation_opcommand_execute_on')),
 	(new CRadioButtonList('operation[opcommand][execute_on]', ZBX_SCRIPT_EXECUTE_ON_AGENT))
-		->addValue(_('Zabbix agent'), ZBX_SCRIPT_EXECUTE_ON_AGENT)
-		->addValue(_('Zabbix server (proxy)'), ZBX_SCRIPT_EXECUTE_ON_PROXY)
-		->addValue(_('Zabbix server'), ZBX_SCRIPT_EXECUTE_ON_SERVER)
+		->addValue(_('Netafier agent'), ZBX_SCRIPT_EXECUTE_ON_AGENT)
+		->addValue(_('Netafier server (proxy)'), ZBX_SCRIPT_EXECUTE_ON_PROXY)
+		->addValue(_('Netafier server'), ZBX_SCRIPT_EXECUTE_ON_SERVER)
 		->setModern(true),
 	'operation-command-script-target'
 );

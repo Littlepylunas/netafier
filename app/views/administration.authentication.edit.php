@@ -45,7 +45,7 @@ $http_tab = (new CFormList('list_http'))
 	)
 	->addRow(new CLabel(_('Default login form'), 'http_login_form'),
 		(new CComboBox('http_login_form', $data['http_login_form'], null, [
-			ZBX_AUTH_FORM_NETAFIER => _('Zabbix login form'),
+			ZBX_AUTH_FORM_NETAFIER => _('Netafier login form'),
 			ZBX_AUTH_FORM_HTTP => _('HTTP login form')
 		]))->setEnabled($data['http_auth_enabled'] == ZBX_AUTH_HTTP_ENABLED)
 	)

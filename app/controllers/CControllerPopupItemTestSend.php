@@ -46,7 +46,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 	protected $get_value_from_host;
 
 	/**
-	 * Time suffixes supported by Zabbix server.
+	 * Time suffixes supported by Netafier server.
 	 *
 	 * @var array
 	 */
@@ -291,7 +291,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 				unset($item_test_data['value_type']);
 			}
 
-			// Send test to be executed on Zabbix server.
+			// Send test to be executed on Netafier server.
 			$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 			$result = $server->testItem($item_test_data, get_cookie('zbx_sessionid'));
 
@@ -334,7 +334,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 
 			$preproc_test_data['steps'] = $this->resolvePreprocessingStepMacros($preproc_test_data['steps']);
 
-			// Send test details to Zabbix server.
+			// Send test details to Netafier server.
 			$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 			$result = $server->testPreprocessingSteps($preproc_test_data, get_cookie('zbx_sessionid'));
 

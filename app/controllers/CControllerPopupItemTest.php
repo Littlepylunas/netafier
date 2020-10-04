@@ -852,11 +852,11 @@ abstract class CControllerPopupItemTest extends CController {
 		foreach ($steps as &$step) {
 			/*
 			 * Values received from user input form may be transformed so we must remove redundant "\r" before
-			 * sending data to Zabbix server.
+			 * sending data to Netafier server.
 			 */
 			$step['params'] = str_replace("\r\n", "\n", $step['params']);
 
-			// Resolve macros in parameter fields before send data to Zabbix server.
+			// Resolve macros in parameter fields before send data to Netafier server.
 			foreach (['params', 'error_handler_params'] as $field) {
 				$matched_macros = (new CMacrosResolverGeneral)->getMacroPositions($step[$field], $macros_types);
 

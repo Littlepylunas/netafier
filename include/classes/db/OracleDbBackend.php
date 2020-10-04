@@ -33,7 +33,7 @@ class OracleDbBackend extends DbBackend {
 		$table_exists = DBfetch(DBselect("SELECT table_name FROM user_tables WHERE table_name='DBVERSION'"));
 
 		if (!$table_exists) {
-			$this->setError(_s('Unable to determine current Zabbix database version: %1$s.',
+			$this->setError(_s('Unable to determine current Netafier database version: %1$s.',
 				_s('the table "%1$s" was not found', 'dbversion')
 			));
 

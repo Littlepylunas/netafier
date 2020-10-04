@@ -42,7 +42,7 @@ if (!empty($DB['DB'])) {
 	$pageHeader->addStyle(getTriggerSeverityCss($config));
 	$pageHeader->addStyle(getTriggerStatusCss($config));
 
-	// perform Zabbix server check only for standard pages
+	// perform Netafier server check only for standard pages
 	if ($config['server_check_interval'] && !empty($NFR_SERVER) && !empty($NFR_SERVER_PORT)) {
 		$scripts[] = 'servercheck.js';
 	}

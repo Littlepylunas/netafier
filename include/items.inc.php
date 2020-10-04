@@ -83,14 +83,14 @@ function get_item_logtype_style($logtype) {
  */
 function item_type2str($type = null) {
 	$types = [
-		ITEM_TYPE_NETAFIER => _('Zabbix agent'),
-		ITEM_TYPE_NETAFIER_ACTIVE => _('Zabbix agent (active)'),
+		ITEM_TYPE_NETAFIER => _('Netafier agent'),
+		ITEM_TYPE_NETAFIER_ACTIVE => _('Netafier agent (active)'),
 		ITEM_TYPE_SIMPLE => _('Simple check'),
 		ITEM_TYPE_SNMP => _('SNMP agent'),
 		ITEM_TYPE_SNMPTRAP => _('SNMP trap'),
-		ITEM_TYPE_INTERNAL => _('Zabbix internal'),
-		ITEM_TYPE_TRAPPER => _('Zabbix trapper'),
-		ITEM_TYPE_AGGREGATE => _('Zabbix aggregate'),
+		ITEM_TYPE_INTERNAL => _('Netafier internal'),
+		ITEM_TYPE_TRAPPER => _('Netafier trapper'),
+		ITEM_TYPE_AGGREGATE => _('Netafier aggregate'),
 		ITEM_TYPE_EXTERNAL => _('External check'),
 		ITEM_TYPE_DB_MONITOR => _('Database monitor'),
 		ITEM_TYPE_HTTPAGENT => _('HTTP agent'),

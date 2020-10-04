@@ -52,9 +52,9 @@ $scriptFormList = (new CFormList())
 	)
 	->addRow((new CLabel(_('Execute on'), 'execute_on')),
 		(new CRadioButtonList('execute_on', (int) $data['execute_on']))
-			->addValue(_('Zabbix agent'), ZBX_SCRIPT_EXECUTE_ON_AGENT)
-			->addValue(_('Zabbix server (proxy)'), ZBX_SCRIPT_EXECUTE_ON_PROXY)
-			->addValue(_('Zabbix server'), ZBX_SCRIPT_EXECUTE_ON_SERVER)
+			->addValue(_('Netafier agent'), ZBX_SCRIPT_EXECUTE_ON_AGENT)
+			->addValue(_('Netafier server (proxy)'), ZBX_SCRIPT_EXECUTE_ON_PROXY)
+			->addValue(_('Netafier server'), ZBX_SCRIPT_EXECUTE_ON_SERVER)
 			->setModern(true)
 	)
 	->addRow((new CLabel(_('Commands'), 'command'))->setAsteriskMark(),

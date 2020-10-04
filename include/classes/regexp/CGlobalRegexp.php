@@ -20,9 +20,9 @@
 
 
 /**
- * Class for regular expressions and Zabbix global expressions.
- * Any string that begins with '@' is treated as Zabbix expression.
- * Data from Zabbix expressions is taken from DB, and cached in static variable.
+ * Class for regular expressions and Netafier global expressions.
+ * Any string that begins with '@' is treated as Netafier expression.
+ * Data from Netafier expressions is taken from DB, and cached in static variable.
  *
  * @throws Exception
  */
@@ -31,7 +31,7 @@ class CGlobalRegexp {
 	const ERROR_REGEXP_NOT_EXISTS = 1;
 
 	/**
-	 * Determine if it's Zabbix expression.
+	 * Determine if it's Netafier expression.
 	 *
 	 * @var bool
 	 */
@@ -39,21 +39,21 @@ class CGlobalRegexp {
 
 	/**
 	 * If we create simple regular expression this contains itself as a string,
-	 * if we create Zabbix expression this contains array of expressions taken from DB.
+	 * if we create Netafier expression this contains array of expressions taken from DB.
 	 *
 	 * @var array|string
 	 */
 	protected $expression;
 
 	/**
-	 * Cache for Zabbix expressions.
+	 * Cache for Netafier expressions.
 	 *
 	 * @var array
 	 */
 	private static $_cachedExpressions = [];
 
 	/**
-	 * Initialize expression, gets data from db for Zabbix expressions.
+	 * Initialize expression, gets data from db for Netafier expressions.
 	 *
 	 * @param string $regExp
 	 *

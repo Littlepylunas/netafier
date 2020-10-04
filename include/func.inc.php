@@ -429,7 +429,7 @@ function zbx_num2bitstr($num, $rev = false) {
 
 /**
  * Convert suffixed string to decimal bytes ('10K' => 10240).
- * Note: this function must not depend on optional PHP libraries, since it is used in Zabbix setup.
+ * Note: this function must not depend on optional PHP libraries, since it is used in Netafier setup.
  *
  * @param string $value
  *
@@ -460,7 +460,7 @@ function str2mem($value) {
 
 /**
  * Convert decimal bytes to suffixed string (10240 => '10K').
- * Note: this function must not depend on optional PHP libraries, since it is used in Zabbix setup.
+ * Note: this function must not depend on optional PHP libraries, since it is used in Netafier setup.
  *
  * @param int $bytes
  *
@@ -1669,7 +1669,7 @@ function filter_messages(array $messages = []) {
 		foreach ($messages as $message) {
 			if (array_key_exists('src', $message) && ($message['src'] === 'sql' || $message['src'] === 'php')) {
 				if (!$generic_exists) {
-					$message['message'] = _('System error occurred. Please contact Zabbix administrator.');
+					$message['message'] = _('System error occurred. Please contact Netafier administrator.');
 					$filtered_messages[] = $message;
 					$generic_exists = true;
 				}

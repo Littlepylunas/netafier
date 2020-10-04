@@ -171,7 +171,7 @@ class CConfiguration extends CApiService {
 			->getObject(NETAFIER_EXPORT_VERSION)
 			->getSchema();
 
-		// Convert human readable import constants to values Zabbix API can work with.
+		// Convert human readable import constants to values Netafier API can work with.
 		$data = (new CConstantImportConverter($schema))->convert($data);
 
 		// Add default values in place of missed tags.

@@ -209,7 +209,7 @@ class CConfigFile {
 	public function getString() {
 		return
 '<?php
-// Zabbix GUI configuration file.
+// Netafier GUI configuration file.
 
 $DB[\'TYPE\']				= \''.addcslashes($this->config['DB']['TYPE'], "'\\").'\';
 $DB[\'SERVER\']			= \''.addcslashes($this->config['DB']['SERVER'], "'\\").'\';
@@ -230,7 +230,7 @@ $DB[\'VERIFY_HOST\']		= '.($this->config['DB']['VERIFY_HOST'] ? 'true' : 'false'
 $DB[\'CIPHER_LIST\']		= \''.addcslashes($this->config['DB']['CIPHER_LIST'], "'\\").'\';
 
 // Use IEEE754 compatible value range for 64-bit Numeric (float) history values.
-// This option is enabled by default for new Zabbix installations.
+// This option is enabled by default for new Netafier installations.
 // For upgraded installations, please read database upgrade notes before enabling this option.
 $DB[\'DOUBLE_IEEE754\']	= '.($this->config['DB']['DOUBLE_IEEE754'] ? 'true' : 'false').';
 

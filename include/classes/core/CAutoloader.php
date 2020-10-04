@@ -20,7 +20,7 @@
 
 
 /**
- * The Zabbix autoloader class.
+ * The Netafier autoloader class.
  */
 class CAutoloader {
 

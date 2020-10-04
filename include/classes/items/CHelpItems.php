@@ -70,7 +70,7 @@ class CHelpItems {
 				],
 				[
 					'key' => 'agent.version',
-					'description' => _('Version of Zabbix agent. Returns string')
+					'description' => _('Version of Netafier agent. Returns string')
 				],
 				[
 					'key' => 'kernel.maxfiles',
@@ -350,11 +350,11 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix.stats[<ip>,<port>]',
-					'description' => _('Returns a JSON object containing Zabbix server or proxy internal metrics.')
+					'description' => _('Returns a JSON object containing Netafier server or proxy internal metrics.')
 				],
 				[
 					'key' => 'zabbix.stats[<ip>,<port>,queue,<from>,<to>]',
-					'description' => _('Number of items in the queue which are delayed in Zabbix server or proxy by "from" till "to" seconds, inclusive.')
+					'description' => _('Number of items in the queue which are delayed in Netafier server or proxy by "from" till "to" seconds, inclusive.')
 				]
 			],
 			ITEM_TYPE_NETAFIER_ACTIVE => [
@@ -368,7 +368,7 @@ class CHelpItems {
 				],
 				[
 					'key' => 'agent.version',
-					'description' => _('Version of Zabbix agent. Returns string')
+					'description' => _('Version of Netafier agent. Returns string')
 				],
 				[
 					'key' => 'eventlog[name,<regexp>,<severity>,<source>,<eventid>,<maxlines>,<mode>]',
@@ -664,17 +664,17 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix.stats[<ip>,<port>]',
-					'description' => _('Returns a JSON object containing Zabbix server or proxy internal metrics.')
+					'description' => _('Returns a JSON object containing Netafier server or proxy internal metrics.')
 				],
 				[
 					'key' => 'zabbix.stats[<ip>,<port>,queue,<from>,<to>]',
-					'description' => _('Number of items in the queue which are delayed in Zabbix server or proxy by "from" till "to" seconds, inclusive.')
+					'description' => _('Number of items in the queue which are delayed in Netafier server or proxy by "from" till "to" seconds, inclusive.')
 				]
 			],
 			ITEM_TYPE_AGGREGATE => [
 				[
 					'key' => 'grpfunc[group,key,func,<param>]',
-					'description' => _('Aggregate checks do not require any agent running on a host being monitored. Zabbix server collects aggregate information by doing direct database queries. See Zabbix Manual.')
+					'description' => _('Aggregate checks do not require any agent running on a host being monitored. Netafier server collects aggregate information by doing direct database queries. See Netafier Manual.')
 				]
 			],
 			ITEM_TYPE_SIMPLE => [
@@ -944,7 +944,7 @@ class CHelpItems {
 			ITEM_TYPE_INTERNAL => [
 				[
 					'key' => 'zabbix[boottime]',
-					'description' => _('Startup time of Zabbix server, Unix timestamp.')
+					'description' => _('Startup time of Netafier server, Unix timestamp.')
 				],
 				[
 					'key' => 'zabbix[history]',
@@ -992,19 +992,19 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix[items]',
-					'description' => _('Number of items in Zabbix database.')
+					'description' => _('Number of items in Netafier database.')
 				],
 				[
 					'key' => 'zabbix[items_unsupported]',
-					'description' => _('Number of unsupported items in Zabbix database.')
+					'description' => _('Number of unsupported items in Netafier database.')
 				],
 				[
 					'key' => 'zabbix[java,,<param>]',
-					'description' => _('Returns information associated with Zabbix Java gateway. Valid params are: ping, version.')
+					'description' => _('Returns information associated with Netafier Java gateway. Valid params are: ping, version.')
 				],
 				[
 					'key' => 'zabbix[process,<type>,<mode>,<state>]',
-					'description' => _('Time a particular Zabbix process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage.')
+					'description' => _('Time a particular Netafier process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage.')
 				],
 				[
 					'key' => 'zabbix[proxy,<name>,<param>]',
@@ -1024,15 +1024,15 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix[requiredperformance]',
-					'description' => _('Required performance of the Zabbix server, in new values per second expected.')
+					'description' => _('Required performance of the Netafier server, in new values per second expected.')
 				],
 				[
 					'key' => 'zabbix[stats,<ip>,<port>]',
-					'description' => _('Returns a JSON object containing Zabbix server or proxy internal metrics.')
+					'description' => _('Returns a JSON object containing Netafier server or proxy internal metrics.')
 				],
 				[
 					'key' => 'zabbix[stats,<ip>,<port>,queue,<from>,<to>]',
-					'description' => _('Number of items in the queue which are delayed in Zabbix server or proxy by "from" till "to" seconds, inclusive.')
+					'description' => _('Number of items in the queue which are delayed in Netafier server or proxy by "from" till "to" seconds, inclusive.')
 				],
 				[
 					'key' => 'zabbix[trends]',
@@ -1044,11 +1044,11 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix[triggers]',
-					'description' => _('Number of triggers in Zabbix database.')
+					'description' => _('Number of triggers in Netafier database.')
 				],
 				[
 					'key' => 'zabbix[uptime]',
-					'description' => _('Uptime of Zabbix server process in seconds.')
+					'description' => _('Uptime of Netafier server process in seconds.')
 				],
 				[
 					'key' => 'zabbix[vcache,buffer,<mode>]',
@@ -1060,7 +1060,7 @@ class CHelpItems {
 				],
 				[
 					'key' => 'zabbix[version]',
-					'description' => _('Version of Zabbix server or proxy')
+					'description' => _('Version of Netafier server or proxy')
 				],
 				[
 					'key' => 'zabbix[vmware,buffer,<mode>]',

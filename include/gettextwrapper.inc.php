@@ -109,8 +109,8 @@ function _s($string) {
  * Supports unlimited parameters; placeholders must be defined as %1$s, %2$s etc.
  *
  * Examples:
- * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'Zabbix server', 1) // 1 item on host Zabbix server
- * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'Zabbix server', 2) // 2 items on host Zabbix server
+ * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'Netafier server', 1) // 1 item on host Netafier server
+ * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'Netafier server', 2) // 2 items on host Netafier server
  *
  * @param string $string1		singular string
  * @param string $string2		plural string

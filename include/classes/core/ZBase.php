@@ -44,7 +44,7 @@ class ZBase {
 	protected $rootDir;
 
 	/**
-	 * @var array of config data from zabbix config file
+	 * @var array of config data from netafierconfig file
 	 */
 	protected $config = [];
 
@@ -335,7 +335,7 @@ class ZBase {
 	}
 
 	/**
-	 * Load zabbix config file.
+	 * Load netafierconfig file.
 	 */
 	protected function loadConfigFile() {
 		$configFile = $this->getRootDir().CConfigFile::CONFIG_FILE_PATH;
@@ -399,7 +399,7 @@ class ZBase {
 			}
 
 			if (!$locale_found && $user_data['lang'] != 'en_GB' && $user_data['lang'] != 'en_gb') {
-				error('Locale for language "'.$user_data['lang'].'" is not found on the web server. Tried to set: '.implode(', ', $locales).'. Unable to translate Zabbix interface.');
+				error('Locale for language "'.$user_data['lang'].'" is not found on the web server. Tried to set: '.implode(', ', $locales).'. Unable to translate Netafier interface.');
 			}
 			bindtextdomain('frontend', 'locale');
 			bind_textdomain_codeset('frontend', 'UTF-8');

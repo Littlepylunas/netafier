@@ -20,7 +20,7 @@
 
 
 /**
- * Validate import data from Zabbix 1.8.
+ * Validate import data from Netafier 1.8.
  */
 class C10XmlValidator {
 

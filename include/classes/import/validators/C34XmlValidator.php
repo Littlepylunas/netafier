@@ -20,7 +20,7 @@
 
 
 /**
- * Validate import data from Zabbix 3.4.x.
+ * Validate import data from Netafier 3.4.x.
  */
 class C34XmlValidator {
 

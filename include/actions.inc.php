@@ -867,17 +867,17 @@ function getActionOperationHints(array $operations) {
 
 				case ZBX_SCRIPT_TYPE_CUSTOM_SCRIPT:
 					if ($operation['opcommand']['execute_on'] == ZBX_SCRIPT_EXECUTE_ON_AGENT) {
-						$result[$key][] = [bold(_s('Run custom commands on %1$s', _('Zabbix agent')).': '),
+						$result[$key][] = [bold(_s('Run custom commands on %1$s', _('Netafier agent')).': '),
 							BR(), italic(zbx_nl2br($operation['opcommand']['command']))
 						];
 					}
 					elseif ($operation['opcommand']['execute_on'] == ZBX_SCRIPT_EXECUTE_ON_PROXY) {
-						$result[$key][] = [bold(_s('Run custom commands on %1$s', _('Zabbix server (proxy)')).': '),
+						$result[$key][] = [bold(_s('Run custom commands on %1$s', _('Netafier server (proxy)')).': '),
 							BR(), italic(zbx_nl2br($operation['opcommand']['command']))
 						];
 					}
 					else {
-						$result[$key][] = [bold(_s('Run custom commands on %1$s', _('Zabbix server')).': '),
+						$result[$key][] = [bold(_s('Run custom commands on %1$s', _('Netafier server')).': '),
 							BR(), italic(zbx_nl2br($operation['opcommand']['command']))
 						];
 					}
@@ -1663,7 +1663,7 @@ function getEventUpdates(array $event) {
  * @param array  $actions['actions']     Actions icon data.
  * @param array  $mediatypes             Mediatypes with maxattempts value and name.
  * @param array  $users                  User name, surname and alias.
- * @param array  $config                 Zabbix config.
+ * @param array  $config                 Netafier config.
  *
  * @return CCol|string
  */
@@ -1747,7 +1747,7 @@ function makeEventMessagesIcon(array $data, array $users) {
  * @param string $data['current_severity']              Current severity.
  * @param int    $data['count']                         Total number of severity changes.
  * @param array  $users                                 User name, surname and alias.
- * @param array  $config                                Zabbix config.
+ * @param array  $config                                Netafier config.
  *
  * @return CSpan|null
  */
@@ -1824,7 +1824,7 @@ function makeEventSeverityChangesIcon(array $data, array $users, array $config) 
  * @param array  $users                             User name, surname and alias.
  * @param array  $mediatypes                        Mediatypes with maxattempts value and name.
  * @param string $mediatypes[]['name']              Mediatype name.
- * @param array  $config                            Zabbix config.
+ * @param array  $config                            Netafier config.
  *
  * @return CSpan|null
  */
@@ -1913,7 +1913,7 @@ function makeEventActionsIcon(array $data, array $users, array $mediatypes, arra
  * @param string $data['actions'][]['acknowledgeid']  Problem update action that was reason for alert (only for ZBX_EVENT_HISTORY_ALERT).
  * @param array  $users                               User name, surname and alias.
  * @param array  $mediatypes                          Mediatypes with maxattempts value.
- * @param array  $config                              Zabbix config.
+ * @param array  $config                              Netafier config.
  *
  * @return CTableInfo
  */
@@ -1964,7 +1964,7 @@ function makeEventDetailsActionsTable(array $data, array $users, array $mediatyp
  * @param string $actions[]['clock']        Time, when action was performed.
  * @param string $actions[]['message']      Message sent by alert, or written by manual update, or remote command text.
  * @param array  $users                     User name, surname and alias.
- * @param array  $config                    Zabbix config.
+ * @param array  $config                    Netafier config.
  *
  * @return CTable
  */
@@ -2048,7 +2048,7 @@ function makeEventDetailsTableUser(array $action, array $users) {
  * @param int    $action['old_severity']  Severity before problem update. (only for ZBX_EVENT_HISTORY_MANUAL_UPDATE)
  * @param int    $action['new_severity']  Severity after problem update. (only for ZBX_EVENT_HISTORY_MANUAL_UPDATE)
  * @param int    $action['alerttype']     Type of alert. (only for ZBX_EVENT_HISTORY_ALERT)
- * @param array  $config                  Zabbix config.
+ * @param array  $config                  Netafier config.
  *
  * @return CSpan
  */

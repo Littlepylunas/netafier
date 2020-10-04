@@ -32,7 +32,7 @@ define('ZBX_LOGIN_BLOCK',		30); // sec
 define('ZBX_BCRYPT_COST',		10);
 define('ZBX_MD5_SIZE',			32);
 
-define('ZBX_SESSION_NAME', 'zbx_sessionid'); // Session cookie name for Zabbix front-end.
+define('ZBX_SESSION_NAME', 'zbx_sessionid'); // Session cookie name for Netafier front-end.
 
 define('ZBX_KIBIBYTE',	'1024');
 define('ZBX_MEBIBYTE',	'1048576');
@@ -530,7 +530,7 @@ define('ITEM_DISCOVER',	0);
 define('ITEM_NO_DISCOVER',	1);
 
 /**
- * Starting from Zabbix 2.2 items could not have ITEM_STATUS_NOTSUPPORTED status
+ * Starting from Netafier 2.2 items could not have ITEM_STATUS_NOTSUPPORTED status
  * this constant is left for importing data from versions 1.8 and 2.0.
  */
 define('ITEM_STATUS_NOTSUPPORTED',	3);
@@ -743,7 +743,7 @@ define('SCREEN_RESOURCE_HOST_INFO',		4);
 define('SCREEN_RESOURCE_TRIGGER_INFO',		5);
 define('SCREEN_RESOURCE_SERVER_INFO',		6);
 define('SCREEN_RESOURCE_CLOCK',				7);
-define('SCREEN_RESOURCE_SCREEN',			8); // Not supported since Zabbix 4.4.
+define('SCREEN_RESOURCE_SCREEN',			8); // Not supported since Netafier 4.4.
 define('SCREEN_RESOURCE_TRIGGER_OVERVIEW',	9);
 define('SCREEN_RESOURCE_DATA_OVERVIEW',		10);
 define('SCREEN_RESOURCE_URL',				11);
@@ -1257,7 +1257,7 @@ define('ZBX_HAVE_IPV6', true);
 define('ZBX_DISCOVERER_IPRANGE_LIMIT', 65536);
 
 define('ZBX_SOCKET_TIMEOUT',			3);		// Socket timeout limit.
-define('ZBX_CONNECT_TIMEOUT',			3);		// Zabbix server connect timeout limit.
+define('ZBX_CONNECT_TIMEOUT',			3);		// Netafier server connect timeout limit.
 define('ZBX_MEDIA_TYPE_TEST_TIMEOUT',	65);	// Timeout limit set for media type test.
 define('ZBX_SCRIPT_TIMEOUT',			60);	// Timeout limit set for scripts.
 define('ZBX_SOCKET_BYTES_LIMIT',    ZBX_MEBIBYTE * 16); // socket response size limit

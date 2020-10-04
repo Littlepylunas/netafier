@@ -51,9 +51,9 @@ function getUserTheme($userData) {
  */
 function user_type2str($userType = null) {
 	$userTypes = [
-		USER_TYPE_NETAFIER_USER => _('Zabbix User'),
-		USER_TYPE_NETAFIER_ADMIN => _('Zabbix Admin'),
-		USER_TYPE_SUPER_ADMIN => _('Zabbix Super Admin')
+		USER_TYPE_NETAFIER_USER => _('Netafier User'),
+		USER_TYPE_NETAFIER_ADMIN => _('Netafier Admin'),
+		USER_TYPE_SUPER_ADMIN => _('Netafier Super Admin')
 	];
 
 	if ($userType === null) {

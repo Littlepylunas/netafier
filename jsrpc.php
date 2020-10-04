@@ -77,7 +77,7 @@ switch ($data['method']) {
 			'result' => (bool) CSession::getValue('serverCheckResult'),
 			'message' => CSession::getValue('serverCheckResult')
 				? ''
-				: _('Zabbix server is not running: the information displayed may not be current.')
+				: _('Netafier server is not running: the information displayed may not be current.')
 		];
 		break;
 

@@ -58,7 +58,7 @@ class PostgresqlDbBackend extends DbBackend {
 		));
 
 		if (!$table_exists) {
-			$this->setError(_s('Unable to determine current Zabbix database version: %1$s.',
+			$this->setError(_s('Unable to determine current Netafier database version: %1$s.',
 				_s('the table "%1$s" was not found', 'dbversion')
 			));
 
@@ -92,7 +92,7 @@ class PostgresqlDbBackend extends DbBackend {
 		));
 
 		if ($row && $row['db_charset'] != ZBX_DB_DEFAULT_CHARSET) {
-			$this->setWarning(_s('Incorrect default charset for Zabbix database: %1$s.',
+			$this->setWarning(_s('Incorrect default charset for Netafier database: %1$s.',
 				_s('"%1$s" instead "%2$s"', $row['db_charset'], ZBX_DB_DEFAULT_CHARSET)
 			));
 			return false;
@@ -113,7 +113,7 @@ class PostgresqlDbBackend extends DbBackend {
 		$row = DBfetch(DBselect('SELECT oid FROM pg_namespace WHERE nspname='.zbx_dbstr($schema)));
 
 		/**
-		 * Getting all fields in all Zabbix tables to check for collation.
+		 * Getting all fields in all Netafier tables to check for collation.
 		 * If collation is not default (its mean collation is the same that was during db creation),
 		 * than we consider it as error.
 		 */

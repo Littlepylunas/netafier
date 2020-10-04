@@ -620,7 +620,7 @@ function make_status_of_zbx() {
 	$status = get_status();
 
 	$table
-		->addRow([_('Zabbix server is running'),
+		->addRow([_('Netafier server is running'),
 			(new CSpan($status['is_running'] ? _('Yes') : _('No')))
 				->addClass($status['is_running'] ? ZBX_STYLE_GREEN : ZBX_STYLE_RED),
 			$server_details
