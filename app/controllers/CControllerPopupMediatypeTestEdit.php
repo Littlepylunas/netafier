@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -79,7 +79,7 @@ class CControllerPopupMediatypeTestEdit extends CController {
 			'mediatypeid' => $this->getInput('mediatypeid'),
 			'sendto' => '',
 			'subject' => _('Test subject'),
-			'message' => _('This is the test message from Zabbix'),
+			'message' => _('This is the test message from Netafier'),
 			'parameters' => $mediatype[0]['parameters'],
 			'type' => $mediatype[0]['type'],
 			'enabled' => ($mediatype[0]['status'] == MEDIA_STATUS_ACTIVE),

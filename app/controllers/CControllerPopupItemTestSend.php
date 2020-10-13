@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -225,7 +225,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 	}
 
 	protected function doAction() {
-		global $NFR_SERVER, $NFR_SERVER_PORT;
+		global $ZBX_SERVER, $ZBX_SERVER_PORT;
 
 		/*
 		 * Define values used to test preprocessing steps.
@@ -292,7 +292,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 			}
 
 			// Send test to be executed on Netafier server.
-			$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+			$server = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 			$result = $server->testItem($item_test_data, get_cookie('zbx_sessionid'));
 
 			// Handle the response.
@@ -335,7 +335,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 			$preproc_test_data['steps'] = $this->resolvePreprocessingStepMacros($preproc_test_data['steps']);
 
 			// Send test details to Netafier server.
-			$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+			$server = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 			$result = $server->testPreprocessingSteps($preproc_test_data, get_cookie('zbx_sessionid'));
 
 			if ($result === false) {

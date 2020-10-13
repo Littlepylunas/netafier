@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ class CConfigFile {
 	const CONFIG_NOT_FOUND = 1;
 	const CONFIG_ERROR = 2;
 
-	const CONFIG_FILE_PATH = '/conf/zabbix.conf.php';
+	const CONFIG_FILE_PATH = '/conf/netafier.conf.php';
 
 	private static $supported_db_types = [
 		ZBX_DB_MYSQL => true,
@@ -140,14 +140,14 @@ class CConfigFile {
 			$this->config['DB']['DOUBLE_IEEE754'] = $DB['DOUBLE_IEEE754'];
 		}
 
-		if (isset($NFR_SERVER)) {
-			$this->config['NFR_SERVER'] = $NFR_SERVER;
+		if (isset($ZBX_SERVER)) {
+			$this->config['ZBX_SERVER'] = $ZBX_SERVER;
 		}
-		if (isset($NFR_SERVER_PORT)) {
-			$this->config['NFR_SERVER_PORT'] = $NFR_SERVER_PORT;
+		if (isset($ZBX_SERVER_PORT)) {
+			$this->config['ZBX_SERVER_PORT'] = $ZBX_SERVER_PORT;
 		}
-		if (isset($NFR_SERVER_NAME)) {
-			$this->config['NFR_SERVER_NAME'] = $NFR_SERVER_NAME;
+		if (isset($ZBX_SERVER_NAME)) {
+			$this->config['ZBX_SERVER_NAME'] = $ZBX_SERVER_NAME;
 		}
 
 		if (isset($IMAGE_FORMAT_DEFAULT)) {
@@ -168,12 +168,12 @@ class CConfigFile {
 	}
 
 	public function makeGlobal() {
-		global $DB, $NFR_SERVER, $NFR_SERVER_PORT, $NFR_SERVER_NAME, $IMAGE_FORMAT_DEFAULT, $HISTORY, $SSO;
+		global $DB, $ZBX_SERVER, $ZBX_SERVER_PORT, $ZBX_SERVER_NAME, $IMAGE_FORMAT_DEFAULT, $HISTORY, $SSO;
 
 		$DB = $this->config['DB'];
-		$NFR_SERVER = $this->config['NFR_SERVER'];
-		$NFR_SERVER_PORT = $this->config['NFR_SERVER_PORT'];
-		$NFR_SERVER_NAME = $this->config['NFR_SERVER_NAME'];
+		$ZBX_SERVER = $this->config['ZBX_SERVER'];
+		$ZBX_SERVER_PORT = $this->config['ZBX_SERVER_PORT'];
+		$ZBX_SERVER_NAME = $this->config['ZBX_SERVER_NAME'];
 		$IMAGE_FORMAT_DEFAULT = $this->config['IMAGE_FORMAT_DEFAULT'];
 		$HISTORY = $this->config['HISTORY'];
 		$SSO = $this->config['SSO'];
@@ -234,9 +234,9 @@ $DB[\'CIPHER_LIST\']		= \''.addcslashes($this->config['DB']['CIPHER_LIST'], "'\\
 // For upgraded installations, please read database upgrade notes before enabling this option.
 $DB[\'DOUBLE_IEEE754\']	= '.($this->config['DB']['DOUBLE_IEEE754'] ? 'true' : 'false').';
 
-$NFR_SERVER				= \''.addcslashes($this->config['NFR_SERVER'], "'\\").'\';
-$NFR_SERVER_PORT		= \''.addcslashes($this->config['NFR_SERVER_PORT'], "'\\").'\';
-$NFR_SERVER_NAME		= \''.addcslashes($this->config['NFR_SERVER_NAME'], "'\\").'\';
+$ZBX_SERVER				= \''.addcslashes($this->config['ZBX_SERVER'], "'\\").'\';
+$ZBX_SERVER_PORT		= \''.addcslashes($this->config['ZBX_SERVER_PORT'], "'\\").'\';
+$ZBX_SERVER_NAME		= \''.addcslashes($this->config['ZBX_SERVER_NAME'], "'\\").'\';
 
 $IMAGE_FORMAT_DEFAULT	= IMAGE_FORMAT_PNG;
 
@@ -275,9 +275,9 @@ $IMAGE_FORMAT_DEFAULT	= IMAGE_FORMAT_PNG;
 			'CIPHER_LIST' => '',
 			'DOUBLE_IEEE754' => false
 		];
-		$this->config['NFR_SERVER'] = 'localhost';
-		$this->config['NFR_SERVER_PORT'] = '10051';
-		$this->config['NFR_SERVER_NAME'] = '';
+		$this->config['ZBX_SERVER'] = 'localhost';
+		$this->config['ZBX_SERVER_PORT'] = '10051';
+		$this->config['ZBX_SERVER_NAME'] = '';
 		$this->config['IMAGE_FORMAT_DEFAULT'] = IMAGE_FORMAT_PNG;
 		$this->config['HISTORY'] = null;
 		$this->config['SSO'] = null;

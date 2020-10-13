@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ else {
 }
 
 if (is_array($data) && array_key_exists('method', $data)
-		&& in_array($data['method'], ['message.settings', 'message.get', 'zabbix.status'])) {
+		&& in_array($data['method'], ['message.settings', 'message.get', 'netafier.status'])) {
 	CWebUser::disableSessionExtension();
 }
 
@@ -64,12 +64,12 @@ switch ($data['method']) {
 		]);
 		break;
 
-	case 'zabbix.status':
+	case 'netafier.status':
 		CSession::start();
 		if (!CSession::keyExists('serverCheckResult')
 				|| (CSession::getValue('serverCheckTime') + SERVER_CHECK_INTERVAL) <= time()) {
-			$zabbixServer = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, 0);
-			CSession::setValue('serverCheckResult', $zabbixServer->isRunning(CWebUser::getSessionCookie()));
+			$netafierServer = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, 0);
+			CSession::setValue('serverCheckResult', $netafierServer->isRunning(CWebUser::getSessionCookie()));
 			CSession::setValue('serverCheckTime', time());
 		}
 

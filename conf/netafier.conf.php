@@ -1,15 +1,15 @@
 <?php
 // Netafier GUI configuration file.
 
-$DB['TYPE']				= 'MYSQL';
+$DB['TYPE']				= 'POSTGRESQL';
 $DB['SERVER']			= 'localhost';
-$DB['PORT']				= '0';
-$DB['DATABASE']			= 'zabbix';
-$DB['USER']				= 'zabbix';
-$DB['PASSWORD']			= '';
+$DB['PORT']				= '5432';
+$DB['DATABASE']			= 'netafierdb';
+$DB['USER']				= 'netafier';
+$DB['PASSWORD']			= 'ngocvb123';
 
 // Schema name. Used for PostgreSQL.
-$DB['SCHEMA']			= '';
+$DB['SCHEMA']			= 'public';
 
 // Used for TLS connection.
 $DB['ENCRYPTION']		= false;
@@ -24,9 +24,9 @@ $DB['CIPHER_LIST']		= '';
 // For upgraded installations, please read database upgrade notes before enabling this option.
 $DB['DOUBLE_IEEE754']	= true;
 
-$NFR_SERVER				= 'localhost';
-$NFR_SERVER_PORT		= '10051';
-$NFR_SERVER_NAME		= '';
+$ZBX_SERVER				= 'localhost';
+$ZBX_SERVER_PORT		= '10051';
+$ZBX_SERVER_NAME		= 'Netafier-Monitor';
 
 $IMAGE_FORMAT_DEFAULT	= IMAGE_FORMAT_PNG;
 

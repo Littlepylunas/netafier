@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ class CImportDataAdapter {
 	 * @param array $data   import data
 	 */
 	public function load(array $data) {
-		$this->data = $data['zabbix_export'];
+		$this->data = $data['netafier_export'];
 	}
 
 	/**

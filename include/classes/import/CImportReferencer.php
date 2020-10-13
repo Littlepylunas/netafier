@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 
 
 /**
- * Class that handles associations for netafierelements unique fields and their database ids.
+ * Class that handles associations for netafier elements unique fields and their database ids.
  * The purpose is to gather all elements that need ids from database and resolve them with one query.
  */
 class CImportReferencer {

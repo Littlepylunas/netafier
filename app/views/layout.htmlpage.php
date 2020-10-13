@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -68,11 +68,11 @@ function local_showHeader(array $data): void {
 }
 
 function local_showSidebar(array $data): void {
-	global $NFR_SERVER_NAME;
+	global $ZBX_SERVER_NAME;
 
 	if ($data['web_layout_mode'] == ZBX_LAYOUT_NORMAL) {
 		echo (new CPartial('layout.htmlpage.aside', [
-			'server_name' => isset($NFR_SERVER_NAME) ? $NFR_SERVER_NAME : ''
+			'server_name' => isset($ZBX_SERVER_NAME) ? $ZBX_SERVER_NAME : ''
 		]))->getOutput();
 	}
 }

@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -183,7 +183,7 @@ class CControllerAuditLogList extends CController {
 	static public function getResourcesList(): array {
 		return [
 			AUDIT_RESOURCE_USER => _('User'),
-			AUDIT_RESOURCE_NETAFIER_CONFIG => _('Configuration of Zabbix'),
+			AUDIT_RESOURCE_NETAFIER_CONFIG => _('Configuration of Netafier'),
 			AUDIT_RESOURCE_MEDIA_TYPE => _('Media type'),
 			AUDIT_RESOURCE_HOST => _('Host'),
 			AUDIT_RESOURCE_HOST_PROTOTYPE => _('Host prototype'),

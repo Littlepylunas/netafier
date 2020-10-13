@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -1834,9 +1834,9 @@ define('ZBX_STYLE_YELLOW', 'yellow');
 define('ZBX_STYLE_FIELD_LABEL_ASTERISK', 'form-label-asterisk');
 define('ZBX_STYLE_PROBLEM_ICON_LIST' , 'problem-icon-list');
 define('ZBX_STYLE_PROBLEM_ICON_LIST_ITEM' , 'problem-icon-list-item');
-define('ZBX_STYLE_NETAFIER_LOGO', 'zabbix-logo');
-define('ZBX_STYLE_NETAFIER_SIDEBAR_LOGO', 'zabbix-sidebar-logo');
-define('ZBX_STYLE_NETAFIER_SIDEBAR_LOGO_COMPACT', 'zabbix-sidebar-logo-compact');
+define('ZBX_STYLE_NETAFIER_LOGO', 'netafier-logo');
+define('ZBX_STYLE_NETAFIER_SIDEBAR_LOGO', 'netafier-sidebar-logo');
+define('ZBX_STYLE_NETAFIER_SIDEBAR_LOGO_COMPACT', 'netafier-sidebar-logo-compact');
 
 // HTML column layout.
 define('ZBX_STYLE_COLUMNS', 'columns-wrapper');

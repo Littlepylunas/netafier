@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -141,7 +141,7 @@ class CControllerPopupItemTestGetValue extends CControllerPopupItemTest {
 	}
 
 	protected function doAction() {
-		global $NFR_SERVER, $NFR_SERVER_PORT;
+		global $ZBX_SERVER, $ZBX_SERVER_PORT;
 
 		// Get post data for particular item type.
 		$data = $this->getItemTestProperties($this->getInputAll());
@@ -182,7 +182,7 @@ class CControllerPopupItemTestGetValue extends CControllerPopupItemTest {
 		];
 
 		// Send test to be executed on Netafier server.
-		$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+		$server = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 		$result = $server->testItem($data, CWebUser::getSessionCookie());
 
 		// Handle the response.

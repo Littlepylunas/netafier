@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -25,18 +25,18 @@
 class C42ImportConverter extends CConverter {
 
 	public function convert($data) {
-		$data['zabbix_export']['version'] = '4.4';
+		$data['netafier_export']['version'] = '4.4';
 
-		if (array_key_exists('hosts', $data['zabbix_export'])) {
-			$data['zabbix_export']['hosts'] = $this->convertInventoryMode($data['zabbix_export']['hosts']);
-			$data['zabbix_export']['hosts'] = $this->convertTlsAccept($data['zabbix_export']['hosts']);
+		if (array_key_exists('hosts', $data['netafier_export'])) {
+			$data['netafier_export']['hosts'] = $this->convertInventoryMode($data['netafier_export']['hosts']);
+			$data['netafier_export']['hosts'] = $this->convertTlsAccept($data['netafier_export']['hosts']);
 		}
 
-		if (array_key_exists('screens', $data['zabbix_export'])) {
-			$data['zabbix_export']['screens'] = $this->convertScreens($data['zabbix_export']['screens']);
+		if (array_key_exists('screens', $data['netafier_export'])) {
+			$data['netafier_export']['screens'] = $this->convertScreens($data['netafier_export']['screens']);
 		}
 
-		$data['zabbix_export'] = $this->convertFormat($data['zabbix_export']);
+		$data['netafier_export'] = $this->convertFormat($data['netafier_export']);
 
 		return $data;
 	}

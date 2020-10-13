@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -203,13 +203,13 @@ class CControllerPopupTestTriggerExpr extends CController {
 
 			$data = ['expressions' => array_values(array_unique($expressions))];
 
-			global $NFR_SERVER, $NFR_SERVER_PORT;
+			global $ZBX_SERVER, $ZBX_SERVER_PORT;
 
-			$zabbix_server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, 0);
-			$response = $zabbix_server->expressionsEvaluate($data, CWebUser::getSessionCookie());
+			$netafier_server = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, 0);
+			$response = $netafier_server->expressionsEvaluate($data, CWebUser::getSessionCookie());
 
-			if ($zabbix_server->getError()) {
-				error($zabbix_server->getError());
+			if ($netafier_server->getError()) {
+				error($netafier_server->getError());
 				$message_title = _('Cannot evaluate expression');
 			}
 			else {

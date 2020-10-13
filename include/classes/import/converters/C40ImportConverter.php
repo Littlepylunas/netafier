@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -25,14 +25,14 @@
 class C40ImportConverter extends CConverter {
 
 	public function convert($data) {
-		$data['zabbix_export']['version'] = '4.2';
+		$data['netafier_export']['version'] = '4.2';
 
-		if (array_key_exists('hosts', $data['zabbix_export'])) {
-			$data['zabbix_export']['hosts'] = $this->convertHosts($data['zabbix_export']['hosts']);
+		if (array_key_exists('hosts', $data['netafier_export'])) {
+			$data['netafier_export']['hosts'] = $this->convertHosts($data['netafier_export']['hosts']);
 		}
 
-		if (array_key_exists('templates', $data['zabbix_export'])) {
-			$data['zabbix_export']['templates'] = $this->convertHosts($data['zabbix_export']['templates']);
+		if (array_key_exists('templates', $data['netafier_export'])) {
+			$data['netafier_export']['templates'] = $this->convertHosts($data['netafier_export']['templates']);
 		}
 
 		return $data;

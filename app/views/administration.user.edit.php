@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -527,7 +527,7 @@ if ($data['action'] !== 'user.edit') {
 
 // Append buttons to form.
 if ($data['action'] === 'user.edit') {
-	$cancel_button = (new CRedirectButton(_('Cancel'), (new CUrl('zabbix.php'))
+	$cancel_button = (new CRedirectButton(_('Cancel'), (new CUrl('netafier.php'))
 		->setArgument('action', 'user.list')
 		->setArgument('page', CPagerHelper::loadPage('user.list', null))
 	))->setId('cancel');
@@ -537,7 +537,7 @@ if ($data['action'] === 'user.edit') {
 			(new CSubmitButton(_('Update'), 'action', 'user.update'))->setId('update'),
 			[
 				(new CRedirectButton(_('Delete'),
-					'zabbix.php?action=user.delete&sid='.$data['sid'].'&userids[]='.$data['userid'],
+					'netafier.php?action=user.delete&sid='.$data['sid'].'&userids[]='.$data['userid'],
 					_('Delete selected user?')
 				))
 					->setEnabled(bccomp(CWebUser::$data['userid'], $data['userid']) != 0)

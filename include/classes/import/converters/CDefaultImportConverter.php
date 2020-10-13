@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -32,11 +32,11 @@ class CDefaultImportConverter extends CConverter {
 
 	public function convert($data) {
 		foreach ($this->rules['rules'] as $tag => $tag_rules) {
-			if (!array_key_exists($tag, $data['zabbix_export'])) {
+			if (!array_key_exists($tag, $data['netafier_export'])) {
 				continue;
 			}
 
-			$data['zabbix_export'][$tag] = $this->addDefaultValue($data['zabbix_export'][$tag], $tag_rules);
+			$data['netafier_export'][$tag] = $this->addDefaultValue($data['netafier_export'][$tag], $tag_rules);
 		}
 
 		return $data;

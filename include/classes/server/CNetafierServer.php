@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -22,9 +22,9 @@
 /**
  * A class for interacting with the Netafier server.
  *
- * Class CZabbixServer
+ * Class CNetafierServer
  */
-class CZabbixServer {
+class CNetafierServer {
 
 	/**
 	 * Return item queue overview.
@@ -530,19 +530,19 @@ class CZabbixServer {
 			if (!$socket = @fsockopen($this->host, $this->port, $errorCode, $errorMsg, ZBX_CONNECT_TIMEOUT)) {
 				switch ($errorMsg) {
 					case 'Connection refused':
-						$dErrorMsg = _s("Connection to Netafier server \"%1\$s\" refused. Possible reasons:\n1. Incorrect server IP/DNS in the \"zabbix.conf.php\";\n2. Security environment (for example, SELinux) is blocking the connection;\n3. Netafier server daemon not running;\n4. Firewall is blocking TCP connection.\n", $this->host);
+						$dErrorMsg = _s("Connection to Netafier server \"%1\$s\" refused. Possible reasons:\n1. Incorrect server IP/DNS in the \"netafier.conf.php\";\n2. Security environment (for example, SELinux) is blocking the connection;\n3. Netafier server daemon not running;\n4. Firewall is blocking TCP connection.\n", $this->host);
 						break;
 
 					case 'No route to host':
-						$dErrorMsg = _s("Netafier server \"%1\$s\" can not be reached. Possible reasons:\n1. Incorrect server IP/DNS in the \"zabbix.conf.php\";\n2. Incorrect network configuration.\n", $this->host);
+						$dErrorMsg = _s("Netafier server \"%1\$s\" can not be reached. Possible reasons:\n1. Incorrect server IP/DNS in the \"netafier.conf.php\";\n2. Incorrect network configuration.\n", $this->host);
 						break;
 
 					case 'Connection timed out':
-						$dErrorMsg = _s("Connection to Netafier server \"%1\$s\" timed out. Possible reasons:\n1. Incorrect server IP/DNS in the \"zabbix.conf.php\";\n2. Firewall is blocking TCP connection.\n", $this->host);
+						$dErrorMsg = _s("Connection to Netafier server \"%1\$s\" timed out. Possible reasons:\n1. Incorrect server IP/DNS in the \"netafier.conf.php\";\n2. Firewall is blocking TCP connection.\n", $this->host);
 						break;
 
 					default:
-						$dErrorMsg = _s("Connection to Netafier server \"%1\$s\" failed. Possible reasons:\n1. Incorrect server IP/DNS in the \"zabbix.conf.php\";\n2. Incorrect DNS server configuration.\n", $this->host);
+						$dErrorMsg = _s("Connection to Netafier server \"%1\$s\" failed. Possible reasons:\n1. Incorrect server IP/DNS in the \"netafier.conf.php\";\n2. Incorrect DNS server configuration.\n", $this->host);
 				}
 
 				$this->error = $dErrorMsg.$errorMsg;

@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ class CConfigurationExportBuilder {
 	 * @return array
 	 */
 	public function getExport() {
-		return ['zabbix_export' => $this->data];
+		return ['netafier_export' => $this->data];
 	}
 
 	/**

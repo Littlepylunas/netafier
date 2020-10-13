@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -604,7 +604,7 @@ class CScript extends CApiService {
 	 * @return array
 	 */
 	public function execute(array $data) {
-		global $NFR_SERVER, $NFR_SERVER_PORT;
+		global $ZBX_SERVER, $ZBX_SERVER_PORT;
 
 		$api_input_rules = ['type' => API_OBJECT, 'fields' => [
 			'hostid' =>		['type' => API_ID, 'flags' => API_REQUIRED],
@@ -632,8 +632,8 @@ class CScript extends CApiService {
 		}
 
 		// execute script
-		$zabbix_server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SCRIPT_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
-		$result = $zabbix_server->executeScript($data['scriptid'], $data['hostid'], self::$userData['sessionid']);
+		$netafier_server = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SCRIPT_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+		$result = $netafier_server->executeScript($data['scriptid'], $data['hostid'], self::$userData['sessionid']);
 
 		if ($result !== false) {
 			// return the result in a backwards-compatible format
@@ -643,7 +643,7 @@ class CScript extends CApiService {
 			];
 		}
 		else {
-			self::exception(ZBX_API_ERROR_INTERNAL, $zabbix_server->getError());
+			self::exception(ZBX_API_ERROR_INTERNAL, $netafier_server->getError());
 		}
 	}
 

@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -46,17 +46,17 @@ $config = getRequest('config', CProfile::get('web.queue.config', 0));
 CProfile::update('web.queue.config', $config, PROFILE_TYPE_INT);
 
 // fetch data
-$zabbixServer = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+$netafierServer = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 $queueRequests = [
-	QUEUE_OVERVIEW => CZabbixServer::QUEUE_OVERVIEW,
-	QUEUE_OVERVIEW_BY_PROXY => CZabbixServer::QUEUE_OVERVIEW_BY_PROXY,
-	QUEUE_DETAILS => CZabbixServer::QUEUE_DETAILS
+	QUEUE_OVERVIEW => CNetafierServer::QUEUE_OVERVIEW,
+	QUEUE_OVERVIEW_BY_PROXY => CNetafierServer::QUEUE_OVERVIEW_BY_PROXY,
+	QUEUE_DETAILS => CNetafierServer::QUEUE_DETAILS
 ];
-$queueData = $zabbixServer->getQueue($queueRequests[$config], get_cookie(ZBX_SESSION_NAME), QUEUE_DETAIL_ITEM_COUNT);
+$queueData = $netafierServer->getQueue($queueRequests[$config], get_cookie(ZBX_SESSION_NAME), QUEUE_DETAIL_ITEM_COUNT);
 
 // check for errors error
-if ($zabbixServer->getError()) {
-	error($zabbixServer->getError());
+if ($netafierServer->getError()) {
+	error($netafierServer->getError());
 	show_error_message(_('Cannot display item queue.'));
 }
 
@@ -116,7 +116,7 @@ if ($config == QUEUE_OVERVIEW) {
 		_('More than 10 minutes')
 	]);
 
-	if (!$zabbixServer->getError()) {
+	if (!$netafierServer->getError()) {
 		$queueData = zbx_toHash($queueData, 'itemtype');
 
 		foreach ($itemTypes as $type) {
@@ -171,7 +171,7 @@ elseif ($config == QUEUE_OVERVIEW_BY_PROXY) {
 		_('More than 10 minutes')
 	]);
 
-	if (!$zabbixServer->getError()) {
+	if (!$netafierServer->getError()) {
 		$proxies = API::proxy()->get([
 			'output' => ['hostid', 'host'],
 			'preservekeys' => true
@@ -223,7 +223,7 @@ elseif ($config == QUEUE_DETAILS) {
 		_('Proxy')
 	]);
 
-	if (!$zabbixServer->getError()) {
+	if (!$netafierServer->getError()) {
 		$queueData = zbx_toHash($queueData, 'itemid');
 
 		$items = API::Item()->get([
@@ -306,7 +306,7 @@ if ($config == QUEUE_OVERVIEW_BY_PROXY) {
 	$total = _('Total').': '.$table->getNumRows();
 }
 elseif ($config == QUEUE_DETAILS) {
-	$total = _s('Displaying %1$s of %2$s found', $table->getNumRows(), $zabbixServer->getTotalCount());
+	$total = _s('Displaying %1$s of %2$s found', $table->getNumRows(), $netafierServer->getTotalCount());
 }
 else {
 	$total = null;

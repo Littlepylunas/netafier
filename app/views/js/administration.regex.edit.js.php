@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -79,7 +79,7 @@
 		 * Object to manage expression related GUI elements.
 		 * @type {Object}
 		 */
-		window.zabbixRegExp = {
+		window.netafierRegExp = {
 
 			/**
 			 * Template for expression row of testing results table.
@@ -224,7 +224,7 @@
 			$test_btn.prop('disabled', true);
 			$test_string.prop('disabled', true);
 
-			zabbixRegExp
+			netafierRegExp
 				.testExpressions($test_string.val())
 				.always(function() {
 					$test_btn.removeClass('is-loading');

@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -32,13 +32,13 @@ class C44ImportConverter extends CConverter {
 	 * @return array
 	 */
 	public function convert($data): array {
-		$data['zabbix_export']['version'] = '5.0';
+		$data['netafier_export']['version'] = '5.0';
 
-		if (array_key_exists('hosts', $data['zabbix_export'])) {
-			$data['zabbix_export']['hosts'] = $this->convertSnmpFieldsToInterfaces($data['zabbix_export']['hosts']);
+		if (array_key_exists('hosts', $data['netafier_export'])) {
+			$data['netafier_export']['hosts'] = $this->convertSnmpFieldsToInterfaces($data['netafier_export']['hosts']);
 		}
 
-		$data['zabbix_export'] = $this->sanitizeSnmpFields($data['zabbix_export']);
+		$data['netafier_export'] = $this->sanitizeSnmpFields($data['netafier_export']);
 
 		return $data;
 	}

@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -124,9 +124,9 @@ class CControllerProxyList extends CController {
 		unset($proxy);
 
 		if ($data['proxies']) {
-			global $NFR_SERVER, $NFR_SERVER_PORT;
+			global $ZBX_SERVER, $ZBX_SERVER_PORT;
 
-			$server = new CZabbixServer($NFR_SERVER, $NFR_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
+			$server = new CNetafierServer($ZBX_SERVER, $ZBX_SERVER_PORT, ZBX_SOCKET_TIMEOUT, ZBX_SOCKET_BYTES_LIMIT);
 			$server_status = $server->getStatus(get_cookie(ZBX_SESSION_NAME));
 
 			if ($server_status !== false) {

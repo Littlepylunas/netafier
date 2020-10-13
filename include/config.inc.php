@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -61,7 +61,7 @@ catch (Exception $e) {
 
 CProfiler::getInstance()->start();
 
-global $NFR_SERVER, $NFR_SERVER_PORT, $page;
+global $ZBX_SERVER, $ZBX_SERVER_PORT, $page;
 
 $page = [
 	'title' => null,

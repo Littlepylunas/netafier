@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ class CGlobalRegexp {
 	 *
 	 * @var bool
 	 */
-	protected $isZabbixRegexp;
+	protected $isNetafierRegexp;
 
 	/**
 	 * If we create simple regular expression this contains itself as a string,
@@ -61,7 +61,7 @@ class CGlobalRegexp {
 	 */
 	public function __construct($regExp) {
 		if ($regExp[0] == '@') {
-			$this->isZabbixRegexp = true;
+			$this->isNetafierRegexp = true;
 			$regExp = substr($regExp, 1);
 
 			if (!isset(self::$_cachedExpressions[$regExp])) {
@@ -85,7 +85,7 @@ class CGlobalRegexp {
 			$this->expression = self::$_cachedExpressions[$regExp];
 		}
 		else {
-			$this->isZabbixRegexp = false;
+			$this->isNetafierRegexp = false;
 			$this->expression = $regExp;
 		}
 	}
@@ -96,7 +96,7 @@ class CGlobalRegexp {
 	 * @return bool
 	 */
 	public function match($string) {
-		if ($this->isZabbixRegexp) {
+		if ($this->isNetafierRegexp) {
 			$result = true;
 
 			foreach ($this->expression as $expression) {

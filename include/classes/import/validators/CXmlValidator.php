@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -58,22 +58,22 @@ class CXmlValidator {
 	 */
 	public function validate(array $data, $format) {
 		$rules = ['type' => XML_ARRAY, 'rules' => [
-			'zabbix_export' => ['type' => XML_ARRAY | XML_REQUIRED, 'check_unexpected' => false, 'rules' => [
+			'netafier_export' => ['type' => XML_ARRAY | XML_REQUIRED, 'check_unexpected' => false, 'rules' => [
 				'version' => ['type' => XML_STRING | XML_REQUIRED]
 			]]
 		]];
 
 		$data = (new CXmlValidatorGeneral($rules, $format))->validate($data, '/');
-		$version = $data['zabbix_export']['version'];
+		$version = $data['netafier_export']['version'];
 
 		if (!array_key_exists($version, $this->versionValidators)) {
 			throw new Exception(
-				_s('Invalid tag "%1$s": %2$s.', '/zabbix_export/version', _('unsupported version number'))
+				_s('Invalid tag "%1$s": %2$s.', '/netafier_export/version', _('unsupported version number'))
 			);
 		}
 
-		$data['zabbix_export'] = (new $this->versionValidators[$version]($format))
-			->validate($data['zabbix_export'], '/zabbix_export');
+		$data['netafier_export'] = (new $this->versionValidators[$version]($format))
+			->validate($data['netafier_export'], '/netafier_export');
 
 		return $data;
 	}

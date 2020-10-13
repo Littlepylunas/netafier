@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ class ZBase {
 	protected $rootDir;
 
 	/**
-	 * @var array of config data from netafierconfig file
+	 * @var array of config data from netafier config file
 	 */
 	protected $config = [];
 
@@ -335,7 +335,7 @@ class ZBase {
 	}
 
 	/**
-	 * Load netafierconfig file.
+	 * Load netafier config file.
 	 */
 	protected function loadConfigFile() {
 		$configFile = $this->getRootDir().CConfigFile::CONFIG_FILE_PATH;

@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -25,19 +25,19 @@
 class C30ImportConverter extends CConverter {
 
 	public function convert($data) {
-		$data['zabbix_export']['version'] = '3.2';
+		$data['netafier_export']['version'] = '3.2';
 
-		if (array_key_exists('hosts', $data['zabbix_export'])) {
-			$data['zabbix_export']['hosts'] = $this->convertHosts($data['zabbix_export']['hosts']);
+		if (array_key_exists('hosts', $data['netafier_export'])) {
+			$data['netafier_export']['hosts'] = $this->convertHosts($data['netafier_export']['hosts']);
 		}
-		if (array_key_exists('templates', $data['zabbix_export'])) {
-			$data['zabbix_export']['templates'] = $this->convertHosts($data['zabbix_export']['templates']);
+		if (array_key_exists('templates', $data['netafier_export'])) {
+			$data['netafier_export']['templates'] = $this->convertHosts($data['netafier_export']['templates']);
 		}
-		if (array_key_exists('triggers', $data['zabbix_export'])) {
-			$data['zabbix_export']['triggers'] = $this->convertTriggers($data['zabbix_export']['triggers']);
+		if (array_key_exists('triggers', $data['netafier_export'])) {
+			$data['netafier_export']['triggers'] = $this->convertTriggers($data['netafier_export']['triggers']);
 		}
-		if (array_key_exists('maps', $data['zabbix_export'])) {
-			$data['zabbix_export']['maps'] = $this->convertMaps($data['zabbix_export']['maps']);
+		if (array_key_exists('maps', $data['netafier_export'])) {
+			$data['netafier_export']['maps'] = $this->convertMaps($data['netafier_export']['maps']);
 		}
 
 		return $data;

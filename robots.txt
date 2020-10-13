@@ -7,15 +7,15 @@
 # are supposed to be hidden.
 #
 # The following configuration should be used if Netafier frontend is installed
-# in the root directory of the web server. It will deny access to Zabbix
+# in the root directory of the web server. It will deny access to Netafier
 # frontend for all robots.
 
 User-agent: *
 Disallow: /
 
-# If Netafier frontend is installed in a subdirectory, for example "zabbix", the
+# If Netafier frontend is installed in a subdirectory, for example "netafier", the
 # "Disallow" directive must be changed to point to that directory:
-# "Disallow: /zabbix/".
+# "Disallow: /netafier/".
 
 # It is important to make sure that the "Disallow" directory points specifically
 # to the Netafier frontend directory, since otherwise it may interfere with other

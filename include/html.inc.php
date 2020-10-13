@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -815,7 +815,7 @@ function makeServerStatusOutput() {
 * @return CTag
 */
 function makeLogo(int $type): ?CTag {
-	static $zabbix_logo_classes = [
+	static $netafier_logo_classes = [
 		LOGO_TYPE_NORMAL => ZBX_STYLE_NETAFIER_LOGO,
 		LOGO_TYPE_SIDEBAR => ZBX_STYLE_NETAFIER_SIDEBAR_LOGO,
 		LOGO_TYPE_SIDEBAR_COMPACT => ZBX_STYLE_NETAFIER_SIDEBAR_LOGO_COMPACT
@@ -827,7 +827,7 @@ function makeLogo(int $type): ?CTag {
 		return (new CImg($brand_logo));
 	}
 	else {
-		return (new CDiv())->addClass($zabbix_logo_classes[$type]);
+		return (new CDiv())->addClass($netafier_logo_classes[$type]);
 	}
 }
 

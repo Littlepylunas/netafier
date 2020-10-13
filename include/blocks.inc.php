@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -605,9 +605,9 @@ function getSeverityTableCell($severity, array $data, array $stat, $is_total = f
 
 function make_status_of_zbx() {
 	if (CWebUser::getType() == USER_TYPE_SUPER_ADMIN) {
-		global $NFR_SERVER, $NFR_SERVER_PORT;
+		global $ZBX_SERVER, $ZBX_SERVER_PORT;
 
-		$server_details = $NFR_SERVER.':'.$NFR_SERVER_PORT;
+		$server_details = $ZBX_SERVER.':'.$ZBX_SERVER_PORT;
 	}
 	else {
 		$server_details = '';

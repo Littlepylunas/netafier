@@ -1,7 +1,7 @@
 <?php
 /*
 ** Netafier
-** Copyright (C) 2001-2020 Neafier .JSC
+** Copyright (C) 2001-2020 Netafier SIA
 **
 ** This program is free software; you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License as published by
@@ -349,11 +349,11 @@ class CHelpItems {
 					'description' => _('Execute WMI query and return the JSON document with all selected objects')
 				],
 				[
-					'key' => 'zabbix.stats[<ip>,<port>]',
+					'key' => 'netafier.stats[<ip>,<port>]',
 					'description' => _('Returns a JSON object containing Netafier server or proxy internal metrics.')
 				],
 				[
-					'key' => 'zabbix.stats[<ip>,<port>,queue,<from>,<to>]',
+					'key' => 'netafier.stats[<ip>,<port>,queue,<from>,<to>]',
 					'description' => _('Number of items in the queue which are delayed in Netafier server or proxy by "from" till "to" seconds, inclusive.')
 				]
 			],
@@ -663,11 +663,11 @@ class CHelpItems {
 					'description' => _('Execute WMI query and return the first selected object. Returns integer, float, string or text (depending on the request)')
 				],
 				[
-					'key' => 'zabbix.stats[<ip>,<port>]',
+					'key' => 'netafier.stats[<ip>,<port>]',
 					'description' => _('Returns a JSON object containing Netafier server or proxy internal metrics.')
 				],
 				[
-					'key' => 'zabbix.stats[<ip>,<port>,queue,<from>,<to>]',
+					'key' => 'netafier.stats[<ip>,<port>,queue,<from>,<to>]',
 					'description' => _('Number of items in the queue which are delayed in Netafier server or proxy by "from" till "to" seconds, inclusive.')
 				]
 			],
@@ -943,131 +943,131 @@ class CHelpItems {
 			],
 			ITEM_TYPE_INTERNAL => [
 				[
-					'key' => 'zabbix[boottime]',
+					'key' => 'netafier[boottime]',
 					'description' => _('Startup time of Netafier server, Unix timestamp.')
 				],
 				[
-					'key' => 'zabbix[history]',
+					'key' => 'netafier[history]',
 					'description' => _('Number of values stored in table HISTORY.')
 				],
 				[
-					'key' => 'zabbix[history_log]',
+					'key' => 'netafier[history_log]',
 					'description' => _('Number of values stored in table HISTORY_LOG.')
 				],
 				[
-					'key' => 'zabbix[history_str]',
+					'key' => 'netafier[history_str]',
 					'description' => _('Number of values stored in table HISTORY_STR.')
 				],
 				[
-					'key' => 'zabbix[history_text]',
+					'key' => 'netafier[history_text]',
 					'description' => _('Number of values stored in table HISTORY_TEXT.')
 				],
 				[
-					'key' => 'zabbix[history_uint]',
+					'key' => 'netafier[history_uint]',
 					'description' => _('Number of values stored in table HISTORY_UINT.')
 				],
 				[
-					'key' => 'zabbix[host,,items]',
+					'key' => 'netafier[host,,items]',
 					'description' => _('Number of enabled items on the host.')
 				],
 				[
-					'key' => 'zabbix[host,,items_unsupported]',
+					'key' => 'netafier[host,,items_unsupported]',
 					'description' => _('Number of unsupported items on the host.')
 				],
 				[
-					'key' => 'zabbix[host,,maintenance]',
+					'key' => 'netafier[host,,maintenance]',
 					'description' => _('Returns current maintenance status of the host.')
 				],
 				[
-					'key' => 'zabbix[host,discovery,interfaces]',
+					'key' => 'netafier[host,discovery,interfaces]',
 					'description' => _('Returns a JSON array describing the host network interfaces configured in Netafier. Can be used for LLD.')
 				],
 				[
-					'key' => 'zabbix[host,<type>,available]',
+					'key' => 'netafier[host,<type>,available]',
 					'description' => _('Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, snmp, ipmi, jmx.')
 				],
 				[
-					'key' => 'zabbix[hosts]',
+					'key' => 'netafier[hosts]',
 					'description' => _('Number of monitored hosts')
 				],
 				[
-					'key' => 'zabbix[items]',
+					'key' => 'netafier[items]',
 					'description' => _('Number of items in Netafier database.')
 				],
 				[
-					'key' => 'zabbix[items_unsupported]',
+					'key' => 'netafier[items_unsupported]',
 					'description' => _('Number of unsupported items in Netafier database.')
 				],
 				[
-					'key' => 'zabbix[java,,<param>]',
+					'key' => 'netafier[java,,<param>]',
 					'description' => _('Returns information associated with Netafier Java gateway. Valid params are: ping, version.')
 				],
 				[
-					'key' => 'zabbix[process,<type>,<mode>,<state>]',
+					'key' => 'netafier[process,<type>,<mode>,<state>]',
 					'description' => _('Time a particular Netafier process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage.')
 				],
 				[
-					'key' => 'zabbix[proxy,<name>,<param>]',
+					'key' => 'netafier[proxy,<name>,<param>]',
 					'description' => _('Time of proxy last access. Name - proxy name. Valid params are: lastaccess - Unix timestamp, delay - seconds.')
 				],
 				[
-					'key' => 'zabbix[proxy_history]',
+					'key' => 'netafier[proxy_history]',
 					'description' => _('Number of items in proxy history that are not yet sent to the server')
 				],
 				[
-					'key' => 'zabbix[queue,<from>,<to>]',
+					'key' => 'netafier[queue,<from>,<to>]',
 					'description' => _('Number of items in the queue which are delayed by from to to seconds, inclusive.')
 				],
 				[
-					'key' => 'zabbix[rcache,<cache>,<mode>]',
+					'key' => 'netafier[rcache,<cache>,<mode>]',
 					'description' => _('Configuration cache statistics. Cache - buffer (modes: pfree, total, used, free).')
 				],
 				[
-					'key' => 'zabbix[requiredperformance]',
+					'key' => 'netafier[requiredperformance]',
 					'description' => _('Required performance of the Netafier server, in new values per second expected.')
 				],
 				[
-					'key' => 'zabbix[stats,<ip>,<port>]',
+					'key' => 'netafier[stats,<ip>,<port>]',
 					'description' => _('Returns a JSON object containing Netafier server or proxy internal metrics.')
 				],
 				[
-					'key' => 'zabbix[stats,<ip>,<port>,queue,<from>,<to>]',
+					'key' => 'netafier[stats,<ip>,<port>,queue,<from>,<to>]',
 					'description' => _('Number of items in the queue which are delayed in Netafier server or proxy by "from" till "to" seconds, inclusive.')
 				],
 				[
-					'key' => 'zabbix[trends]',
+					'key' => 'netafier[trends]',
 					'description' => _('Number of values stored in table TRENDS.')
 				],
 				[
-					'key' => 'zabbix[trends_uint]',
+					'key' => 'netafier[trends_uint]',
 					'description' => _('Number of values stored in table TRENDS_UINT.')
 				],
 				[
-					'key' => 'zabbix[triggers]',
+					'key' => 'netafier[triggers]',
 					'description' => _('Number of triggers in Netafier database.')
 				],
 				[
-					'key' => 'zabbix[uptime]',
+					'key' => 'netafier[uptime]',
 					'description' => _('Uptime of Netafier server process in seconds.')
 				],
 				[
-					'key' => 'zabbix[vcache,buffer,<mode>]',
+					'key' => 'netafier[vcache,buffer,<mode>]',
 					'description' => _('Value cache statistics. Valid modes are: total, free, pfree, used and pused.')
 				],
 				[
-					'key' => 'zabbix[vcache,cache,<parameter>]',
+					'key' => 'netafier[vcache,cache,<parameter>]',
 					'description' => _('Value cache effectiveness. Valid parameters are: requests, hits and misses.')
 				],
 				[
-					'key' => 'zabbix[version]',
+					'key' => 'netafier[version]',
 					'description' => _('Version of Netafier server or proxy')
 				],
 				[
-					'key' => 'zabbix[vmware,buffer,<mode>]',
+					'key' => 'netafier[vmware,buffer,<mode>]',
 					'description' => _('VMware cache statistics. Valid modes are: total, free, pfree, used and pused.')
 				],
 				[
-					'key' => 'zabbix[wcache,<cache>,<mode>]',
+					'key' => 'netafier[wcache,<cache>,<mode>]',
 					'description' => _('Data cache statistics. Cache - one of values (modes: all, float, uint, str, log, text), history (modes: pfree, total, used, free), trend (modes: pfree, total, used, free), text (modes: pfree, total, used, free).')
 				]
 			],
