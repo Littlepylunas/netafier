@@ -201,7 +201,7 @@ if ($data['action'] === 'userprofile.edit' || $data['db_user']['alias'] !== ZBX_
 
 // NGOCVB_START_CHANGE
 // Prepare data license
-$licence = explode('-', base64_decode(substr($data['url'], 5)));
+$licence = explode('-', base64_decode(strrev($data['url'])));
 $res = DBselect('select count(*) as count from hosts where hostid > 10368');
 $res = DBFetch($res);
 $count = $res['count'];
@@ -240,7 +240,7 @@ $user_form_list
 				
 	)
 	->addRow(
-		(count(explode('-', base64_decode(substr($data['url'], 5)))) === 4) ? 
+		(count(explode('-', base64_decode(strrev($data['url'])))) === 4) ? 
 			[
 				(new CSpan('Product ID:  '))
 					->addClass('black')
@@ -253,7 +253,7 @@ $user_form_list
 			null			
 	)
 	->addRow(
-		(count(explode('-', base64_decode(substr($data['url'], 5)))) === 4) ? 
+		(count(explode('-', base64_decode(strrev($data['url'])))) === 4) ? 
 			[
 				(new CSpan('Time:        '))
 					->addClass('black')
@@ -269,7 +269,7 @@ $user_form_list
 			null			
 	)
 	->addRow(
-		(count(explode('-', base64_decode(substr($data['url'], 5)))) === 4) ? 
+		(count(explode('-', base64_decode(strrev($data['url'])))) === 4) ? 
 			[
 				(new CSpan('Hosts used: '))
 					->addClass('black')
