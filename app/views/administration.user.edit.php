@@ -200,8 +200,24 @@ if ($data['action'] === 'userprofile.edit' || $data['db_user']['alias'] !== ZBX_
 }
 
 // NGOCVB_START_CHANGE
+
 // Prepare data license
 $licence = explode('-', base64_decode(strrev($data['url'])));
+
+// Check license
+//Dữ liệu để POST
+// $data_array =  array(
+// 	"license"        => $data['url'],
+// 	),
+// );
+// $make_call = callAPI('POST', 'https://api.example.com/post_url/', json_encode($data_array));
+// $response = json_decode($make_call, true);
+// $status     = $response['status']
+// if($status != 'success') $licence = explode('-','-');
+
+
+
+//
 $res = DBselect('select count(*) as count from hosts where hostid > 10368');
 $res = DBFetch($res);
 $count = $res['count'];
